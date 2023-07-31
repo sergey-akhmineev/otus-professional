@@ -1,19 +1,14 @@
-import sys
 import os
 import logging
 import json
 import re
 import gzip
 import argparse
-import io
 from datetime import datetime
 from collections import namedtuple
 import statistics
 import itertools
 import copy
-
-[flake8]
-ignore = E501
 
 DEFAULT_CONFIG_PATH = ""
 REPORT_TEMPLATE_PATH = "./reports/report.html"
@@ -37,12 +32,11 @@ LOG_RECORD_REGEX = re.compile(
 
 FileInfo = namedtuple('FileInfo', ['path', 'date'])
 
+
 def load_config(path):
-    try:
-        with open(path, 'rb') as file:
-            return json.load(file, encoding='utf8')
-    except (json.JSONDecodeError, FileNotFoundError):
-        raise
+    with open(path, 'rb') as file:
+        return json.load(file, encoding='utf8')
+
 
 def generate_report(records, limit):
     total_records = 0
@@ -79,7 +73,7 @@ def generate_report(records, limit):
 
 
 def extract_log_records(path, parser, errors_limit=None):
-    open_fn = gzip.open if path.endswith('.gz') else io.open
+    open_fn = gzip.open if path.endswith('.gz') else open
     errors = 0
     total = 0
     log_records = []
@@ -96,18 +90,22 @@ def extract_log_records(path, parser, errors_limit=None):
 
     return log_records
 
+
 def parse_log_record(line):
     decoded_line = line.decode("utf-8")
     url = decoded_line.split(" ")[7]
     duration = decoded_line.split(" ")[-1]
     return url, duration
 
+
 def setup_logging(path):
     dir = os.path.split(path)[0]
     if not os.path.exists(dir):
         os.makedirs(dir)
     logging.basicConfig(filename=path, level=logging.INFO,
-                        format='[%(asctime)s] %(levelname).1s %(message)s', datefmt='%Y.%m.%d %H:%M:%S')
+                        format='[%(asctime)s] %(levelname).1s %(message)s',
+                        datefmt='%Y.%m.%d %H:%M:%S')
+
 
 def get_latest_log(directory):
     if not os.path.isdir(directory):
@@ -129,11 +127,13 @@ def get_latest_log(directory):
 
     return FileInfo(latest_file, latest_date)
 
+
 def render_template(template_path, filepath, data=[]):
     with open(template_path, "r") as template_file:
         template = template_file.read().replace("$table_json", str(data))
     with open(filepath, "w") as report_file:
         report_file.write(template)
+
 
 def main(config):
     if config_from_file:
@@ -141,7 +141,7 @@ def main(config):
 
     setup_logging(config.get('LOG_FILE'))
 
-    latest_log = get_latest_log(config['LOGS_DIR'])
+    latest_log = get_latest_log(config['LOG_CATEGORY'])
     if not latest_log:
         logging.info('No log files yet')
         return
@@ -168,6 +168,7 @@ def main(config):
 
     logging.info(f'Report saved to {os.path.normpath(report_file_path)}')
 
+
 def load_user_config():
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -185,10 +186,10 @@ def load_user_config():
     except (json.JSONDecodeError, FileNotFoundError) as e:
         raise e
 
+
 if __name__ == '__main__':
     try:
         config = load_user_config()
-        setup_logging(config.get('LOG_FILE'))
         main(copy.deepcopy(config))
 
     except FileNotFoundError as e:
