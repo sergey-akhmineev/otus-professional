@@ -35,8 +35,11 @@ LOG_RECORD_REGEX = re.compile(
 FileInfo = namedtuple('FileInfo', ['path', 'date'])
 
 def load_config(path):
-    with open(path, 'rb') as file:
-        return json.load(file, encoding='utf8')
+    try:
+        with open(path, 'rb') as file:
+            return json.load(file, encoding='utf8')
+    except (json.JSONDecodeError, FileNotFoundError):
+        raise
 
 def generate_report(records, limit):
     total_records = 0
@@ -116,7 +119,7 @@ def get_latest_log(directory):
             except Exception as e:
                 date = None
                 logging.error("An error when parse date from file name")
-            
+
             if not latest_date or (date and date > latest_date):
                 latest_file = f"{directory}/{filename}"
                 latest_date = date
@@ -149,7 +152,7 @@ def main(config):
         return
 
     logging.info(f'Collecting data from "{os.path.normpath(latest_log.path)}"')
-    
+
     log_records = extract_log_records(
         latest_log.path,
         parse_log_record,
@@ -170,24 +173,31 @@ def load_user_config():
         default=DEFAULT_CONFIG_PATH
     )
     args = parser.parse_args()
-    
+
     if not args.config:
         return
-    
+
     try:
         return load_config(args.config)
-    except (json.JSONDecodeError, FileNotFoundError):
-        logging.exception("An error while parsing config file")
-        sys.exit()
+    except (json.JSONDecodeError, FileNotFoundError) as e:
+        raise e
 
 if __name__ == '__main__':
-    config = load_user_config()
-   
-    setup_logging(config.get('LOG_FILE'))
-   
     try:
+        config = load_user_config()
+        setup_logging(config.get('LOG_FILE'))
         main(copy.deepcopy(config))
+
+    except FileNotFoundError as e:
+        logging.error(f"File not found: {e}")
+    except json.JSONDecodeError as e:
+        logging.error(f"An error occured while parsing config file: {e}")
     except Exception as e:
-        logging.exception("An error occured")
+        logging.error(f"An error occured: {e}")
 else:
-    config_from_file = load_user_config()
+    try:
+        config_from_file = load_user_config()
+    except FileNotFoundError as e:
+        logging.error(f"File not found: {e}")
+    except json.JSONDecodeError as e:
+        logging.error(f"An error while parsing config file: {e}")
