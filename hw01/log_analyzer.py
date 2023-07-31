@@ -8,9 +8,6 @@
 #                     '$request_time';
 import worker
 
-[flake8]
-ignore = E501
-
 config = {
     "REPORTS_DIR": "./reports",
     "LOG_DIR": "./log",

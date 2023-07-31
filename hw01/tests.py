@@ -1,9 +1,6 @@
 import unittest
 from worker import load_config, generate_report, parse_log_record
 
-[flake8]
-ignore = E501
-
 
 class TestWorkerMethods(unittest.TestCase):
 
