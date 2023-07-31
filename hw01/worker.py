@@ -12,6 +12,9 @@ import statistics
 import itertools
 import copy
 
+[flake8]
+ignore = E501
+
 DEFAULT_CONFIG_PATH = ""
 REPORT_TEMPLATE_PATH = "./reports/report.html"
 
