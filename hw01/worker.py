@@ -113,11 +113,12 @@ def get_latest_log(directory):
 
     latest_file = latest_date = None
     for filename in os.listdir(directory):
-        match = re.match(r'^nginx-access-ui\.log-(?P<date>\d{8})(\.gz)?$', filename)
+        match = re.match(r'^nginx-access-ui\.log-(?P<date>\d{8})'\
+                                         r'(\.gz)?$', filename)
         if match:
             try:
                 date = datetime.strptime(match.group("date"), "%Y%m%d").date()
-            except Exception as _:
+            except Exception:
                 date = None
                 logging.error("An error when parse date from file name")
 
