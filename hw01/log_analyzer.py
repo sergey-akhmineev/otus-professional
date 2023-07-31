@@ -7,6 +7,10 @@
 #                     '"$http_user_agent" "$http_x_forwarded_for" "$http_X_REQUEST_ID" "$http_X_RB_USER" '
 #                     '$request_time';
 import worker
+
+[flake8]
+ignore = E501
+
 config = {
     "REPORTS_DIR": "./reports",
     "LOG_DIR": "./log",

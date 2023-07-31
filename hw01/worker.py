@@ -14,20 +14,20 @@ DEFAULT_CONFIG_PATH = ""
 REPORT_TEMPLATE_PATH = "./reports/report.html"
 
 LOG_RECORD_REGEX = re.compile(
-    '^'
-    '\S+ '  # IP address
-    '\S+\s+'  # User ID
-    '\S+ '  # User real IP
-    '\[\S+ \S+\] '  # Local time [datetime tz]
-    '"\S+ (?P<url>\S+) \S+" '  # Request info
-    '\d+ '  # Status
-    '\d+ '  # Bytes sent
-    '"\S+" '  # Referrer
-    '".*" '  # User agent
-    '"\S+" '  # Forwarded for
-    '"\S+" '  # Request ID
-    '"\S+" '  # User RB
-    '(?P<duration>\d+\.\d+)'  # Request duration
+    r"^"
+    r"\S+ "  # IP address
+    r'\S+\s+'  # User ID
+    r'\S+ '  # User real IP
+    r'\[\S+ \S+\] '  # Local time [datetime tz]
+    r'"\S+ (?P<url>\S+) \S+" '  # Request info
+    r'\d+ '  # Status
+    r'\d+ '  # Bytes sent
+    r'"\S+" '  # Referrer
+    r'".*" '  # User agent
+    r'"\S+" '  # Forwarded for
+    r'"\S+" '  # Request ID
+    r'"\S+" '  # User RB
+    r'(?P<duration>\d+\.\d+)'  # Request duration
 )
 
 FileInfo = namedtuple('FileInfo', ['path', 'date'])
@@ -117,7 +117,7 @@ def get_latest_log(directory):
         if match:
             try:
                 date = datetime.strptime(match.group("date"), "%Y%m%d").date()
-            except Exception as e:
+            except Exception as _:
                 date = None
                 logging.error("An error when parse date from file name")
 
