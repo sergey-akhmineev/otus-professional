@@ -12,7 +12,6 @@ config = {
     "MAX_REPORT_SIZE": 1000
 }
 
-# Удалите лишние пробелы в пустой строке для решения ошибки W293
 
 def main():
     worker.main(config)

@@ -15,19 +15,19 @@ REPORT_TEMPLATE_PATH = "./reports/report.html"
 
 LOG_RECORD_REGEX = re.compile(
     r"^"
-    r"\S+ "  # IP address
-    r'\S+\s+'  # User ID
-    r'\S+ '  # User real IP
-    r'\[\S+ \S+\] '  # Local time [datetime tz]
-    r'"\S+ (?P<url>\S+) \S+" '  # Request info
-    r'\d+ '  # Status
-    r'\d+ '  # Bytes sent
-    r'"\S+" '  # Referrer
-    r'".*" '  # User agent
-    r'"\S+" '  # Forwarded for
-    r'"\S+" '  # Request ID
-    r'"\S+" '  # User RB
-    r'(?P<duration>\d+\.\d+)'  # Request duration
+    r"\S+ "
+    r'\S+\s+'
+    r'\S+ '
+    r'\[\S+ \S+\] '
+    r'"\S+ (?P<url>\S+) \S+" '
+    r'\d+ '
+    r'\d+ '
+    r'"\S+" '
+    r'".*" '
+    r'"\S+" '
+    r'"\S+" '
+    r'"\S+" '
+    r'(?P<duration>\d+\.\d+)'
 )
 
 FileInfo = namedtuple('FileInfo', ['path', 'date'])
@@ -36,7 +36,6 @@ FileInfo = namedtuple('FileInfo', ['path', 'date'])
 def load_config(path):
     with open(path, 'rb') as file:
         return json.load(file, encoding='utf8')
-
 
 def generate_report(records, limit):
     total_records = 0
