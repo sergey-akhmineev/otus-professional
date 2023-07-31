@@ -116,7 +116,7 @@ def get_latest_log(directory):
         match = re.match(
         r'^nginx-access-ui\.log-(?P<date>\d{8})(\.gz)?$',
         filename
-    )
+        )
         if match:
             try:
                 date = datetime.strptime(match.group("date"), "%Y%m%d").date()
