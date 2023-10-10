@@ -1,4 +1,4 @@
-name: Python application
+name: hw02
 
 on:
   push:
