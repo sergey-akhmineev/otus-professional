@@ -52,7 +52,7 @@ class Field(abc.ABC):
 
     @abc.abstractmethod
     def is_empty(self, value):
-        raise NotImplemented
+        raise NotImplementedError()
 
 
 class CharField(Field):
@@ -204,7 +204,7 @@ class ClientsInterestsRequest(AbstractRequest):
 
     def return_answer(self, store, context, is_admin):
         context["nclients"] = len(self.client_ids)
-        return {str(cid):  get_interests(store=store, cid=cid) for cid in self.client_ids}
+        return {str(cid): get_interests(store=store, cid=cid) for cid in self.client_ids}
 
 
 class OnlineScoreRequest(AbstractRequest):
@@ -231,7 +231,7 @@ class OnlineScoreRequest(AbstractRequest):
             is_vailed_first_arg = False
             is_vailed_second_arg = False
             value_arg_1 = "gender" if isinstance(self.fields[pair[0]], GenderField) and getattr(
-                self, pair[0], None) != None else getattr(self, pair[0], None)  # fix gender value = 0 problem
+                self, pair[0], None) is not None else getattr(self, pair[0], None)  # fix gender value = 0 problem
             if value_arg_1 or not self.fields[pair[0]].is_empty(value_arg_1):
                 is_vailed_first_arg = True
 
@@ -294,7 +294,7 @@ def check_auth(request):
 def answer_handler(request, store, context, is_admin):
     if isinstance(request, ClientsInterestsRequest):
         context["nclients"] = len(request.client_ids)
-        return {str(cid):  get_interests(store=store, cid=cid) for cid in request.client_ids}
+        return {str(cid): get_interests(store=store, cid=cid) for cid in request.client_ids}
 
     if isinstance(request, OnlineScoreRequest):
         filled_field_names = [
@@ -363,7 +363,7 @@ class MainHTTPHandler(BaseHTTPRequestHandler):
         try:
             data_string = self.rfile.read(int(self.headers['Content-Length']))
             request = json.loads(data_string)
-        except:
+        except Exception:
             code = BAD_REQUEST
 
         if request:
