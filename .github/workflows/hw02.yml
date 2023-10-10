@@ -25,5 +25,5 @@ jobs:
     - name: Lint with flake8
       run: flake8 .
     - name: Test with unit test
-      run: python tests.py
+      run: python test.py
       working-directory: hw02
