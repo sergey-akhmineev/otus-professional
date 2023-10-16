@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 import sys
 v3 = sys.version_info[0] == 3
 
@@ -10,6 +9,7 @@ if v3:
 else:
   import httplib
 import unittest
+
 
 class HttpServer(unittest.TestCase):
   host = "localhost"
@@ -25,10 +25,7 @@ class HttpServer(unittest.TestCase):
     """ Send bad http headers """
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((self.host, self.port))
-    if v3:
-      s.sendall(b"\n")
-    else:
-      s.sendall("\n")
+    s.sendall("\n")
     s.close()
 
   def test_server_header(self):
@@ -48,10 +45,7 @@ class HttpServer(unittest.TestCase):
     self.assertEqual(int(r.status), 200)
     self.assertEqual(int(length), 34)
     self.assertEqual(len(data), 34)
-    if v3:
-      self.assertEqual(data, b"<html>Directory index file</html>\n")
-    else:
-      self.assertEqual(data, "<html>Directory index file</html>\n")
+    self.assertEqual(data, "<html>Directory index file</html>\n")
 
   def test_index_not_found(self):
     """directory index file absent"""
@@ -76,13 +70,9 @@ class HttpServer(unittest.TestCase):
     self.assertEqual(int(r.status), 200)
     self.assertEqual(int(length), 20)
     self.assertEqual(len(data), 20)
-    if v3:
-      self.assertEqual(data, b"bingo, you found it\n")
-    else:
-      self.assertEqual(data, "bingo, you found it\n")
+    self.assertEqual(data, "bingo, you found it\n")
 
-
-  def test_file_with_slash(self):
+  def test_file_with_query_string(self):
     """slash after filename"""
     self.conn.request("GET", "/httptest/dir2/page.html/")
     r = self.conn.getresponse()
@@ -98,11 +88,7 @@ class HttpServer(unittest.TestCase):
     self.assertEqual(int(r.status), 200)
     self.assertEqual(int(length), 38)
     self.assertEqual(len(data), 38)
-    if v3:
-      self.assertEqual(data, b"<html><body>Page Sample</body></html>\n")
-    else:
-      self.assertEqual(data, "<html><body>Page Sample</body></html>\n")
-
+    self.assertEqual(data, "<html><body>Page Sample</body></html>\n")
 
   def test_file_with_spaces(self):
     """filename with spaces"""
@@ -113,11 +99,7 @@ class HttpServer(unittest.TestCase):
     self.assertEqual(int(r.status), 200)
     self.assertEqual(int(length), 19)
     self.assertEqual(len(data), 19)
-    if v3:
-      self.assertEqual(data, b"letters and spaces\n")
-    else:
-      self.assertEqual(data, "letters and spaces\n")
-
+    self.assertEqual(data, "letters and spaces\n")
 
   def test_file_urlencoded(self):
     """urlencoded filename"""
@@ -128,11 +110,7 @@ class HttpServer(unittest.TestCase):
     self.assertEqual(int(r.status), 200)
     self.assertEqual(int(length), 38)
     self.assertEqual(len(data), 38)
-    if v3:
-      self.assertEqual(data, b"<html><body>Page Sample</body></html>\n")
-    else:
-      self.assertEqual(data, "<html><body>Page Sample</body></html>\n")
-
+    self.assertEqual(data, "<html><body>Page Sample</body></html>\n")
 
   def test_large_file(self):
     """large file downloaded correctly"""
@@ -143,11 +121,7 @@ class HttpServer(unittest.TestCase):
     self.assertEqual(int(r.status), 200)
     self.assertEqual(int(length), 954824)
     self.assertEqual(len(data), 954824)
-    if v3:
-      self.assertIn(b"Wikimedia Foundation, Inc.", data)
-    else:
-      self.assertIn("Wikimedia Foundation, Inc.", data)
-
+    self.assertIn("Wikimedia Foundation, Inc.", data)
 
   def test_document_root_escaping(self):
     """document root escaping forbidden"""
@@ -163,10 +137,7 @@ class HttpServer(unittest.TestCase):
     data = r.read()
     length = r.getheader("Content-Length")
     self.assertEqual(int(r.status), 200)
-    if v3:
-      self.assertIn(b"hello", data)
-    else:
-      self.assertIn("hello", data)
+    self.assertIn("hello", data)
     self.assertEqual(int(length), 5)
 
   def test_post_method(self):
@@ -181,46 +152,26 @@ class HttpServer(unittest.TestCase):
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((self.host, self.port))
-    if v3:
-      s.send(b"HEAD /httptest/dir2/page.html HTTP/1.0\r\n\r\n")
-      data = b""
-    else:
-      s.send("HEAD /httptest/dir2/page.html HTTP/1.0\r\n\r\n")
-      data = ""
+    s.send("HEAD /httptest/dir2/page.html HTTP/1.0\r\n\r\n")
+    data = ""
     while 1:
       buf = s.recv(1024)
       if not buf: break
       data += buf
     s.close()
 
-    if v3:
-      self.assertTrue(data.find(b"\r\n\r\n") > 0, "no empty line with CRLF found")
-      (head, body) = re.split(b"\r\n\r\n", data, 1);
-      headers = head.split(b"\r\n");
-      self.assertTrue(len(headers) > 0, "no headers found")
-    else:
-      self.assertTrue(data.find("\r\n\r\n") > 0, "no empty line with CRLF found")
-      (head, body) = re.split("\r\n\r\n", data, 1);
-      headers = head.split("\r\n");
-      self.assertTrue(len(headers) > 0, "no headers found")
-
+    self.assertTrue(data.find("\r\n\r\n") > 0, "no empty line with CRLF found")
+    (head, body) = re.split("\r\n\r\n", data, 1);
+    headers = head.split("\r\n");
+    self.assertTrue(len(headers) > 0, "no headers found")
     statusline = headers.pop(0)
-    if v3:
-      (proto, code, status) = statusline.split(b" ");
-    else:
-      (proto, code, status) = statusline.split(" ");
+    (proto, code, status) = statusline.split(" ");
     h = {}
     for k,v in enumerate(headers):
-      if v3:
-        (name, value) = re.split(b'\s*:\s*', v, 1)
-      else:
-        (name, value) = re.split('\s*:\s*', v, 1)
+      (name, value) = re.split('\s*:\s*', v, 1)
       h[name] = value
     if (int(code) == 200):
-      if v3:
-        self.assertEqual(int(h[b'Content-Length']), 38)
-      else:
-        self.assertEqual(int(h['Content-Length']), 38)
+      self.assertEqual(int(h['Content-Length']), 38)
       self.assertEqual(len(body), 0)
     else:
       self.assertIn(int(code), (400,405))
@@ -336,4 +287,3 @@ class NewRunner(unittest.TextTestRunner):
 
 runner = NewRunner(verbosity=2)
 runner.run(suite)
-
