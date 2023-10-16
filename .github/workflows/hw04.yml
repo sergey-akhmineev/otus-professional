@@ -1,0 +1,33 @@
+name: hw04
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Run server and test with Apache Benchmark
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Build and run Docker container
+      run: |
+        docker-compose up -d --build
+
+    - name: Install Apache Benchmark (ab)
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y apache2-utils
+
+    - name: Run Apache Benchmark against server
+      run: |
+        ab -n 50000 -c 100 -r http://localhost:8080/httptest/wikipedia_russia.html
+      working-directory: hw04

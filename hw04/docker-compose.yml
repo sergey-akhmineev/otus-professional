@@ -1,0 +1,11 @@
+version: "3"
+services:
+  httpd:
+      build:
+          context: .
+          dockerfile: Dockerfile
+      ports:
+          - "8080:8080"
+      volumes:
+          - ./hw04:/hw04
+      command: ./httpd.py -r / -p 8080 -w 2
