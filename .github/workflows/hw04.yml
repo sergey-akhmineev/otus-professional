@@ -19,18 +19,17 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-
-    - name: Build and run Docker container
+    - name: Build Docker container
       run: |
-        docker-compose up -d --build
+        docker build . -t hw04
       working-directory: hw04
 
-    - name: Install Apache Benchmark (ab)
+    - name: Run Docker container with server
       run: |
-        sudo apt-get update
-        sudo apt-get install -y apache2-utils
+        docker run -d --rm --name hw04_container -p 8080:8080 hw04
+      working-directory: hw04
 
-    - name: Run Apache Benchmark against server
+    - name: Run Apache Benchmark inside Docker container
       run: |
-        ab -n 50000 -c 100 -r http://localhost:8080/httptest/wikipedia_russia.html
+        docker exec hw04_container ab -n 50000 -c 100 -r http://localhost:8080/httptest/wikipedia_russia.html
       working-directory: hw04
