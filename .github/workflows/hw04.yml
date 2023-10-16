@@ -9,6 +9,7 @@ on:
 permissions:
   contents: read
 
+
 jobs:
   test:
     name: Run server and test with Apache Benchmark
@@ -17,10 +18,12 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+      working-directory: hw04
 
     - name: Build and run Docker container
       run: |
         docker-compose up -d --build
+      working-directory: hw04
 
     - name: Install Apache Benchmark (ab)
       run: |
