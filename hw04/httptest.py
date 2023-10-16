@@ -2,7 +2,7 @@
 
 import re
 import socket
-import http.client as httplib
+import httplib
 import unittest
 
 class HttpServer(unittest.TestCase):
