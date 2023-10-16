@@ -1,15 +1,9 @@
 #!/usr/bin/env python
-import sys
-v3 = sys.version_info[0] == 3
 
 import re
 import socket
-if v3:
-  import http.client as httplib
-else:
-  import httplib
+import httplib
 import unittest
-
 
 class HttpServer(unittest.TestCase):
   host = "localhost"
