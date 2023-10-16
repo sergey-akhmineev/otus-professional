@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ab944d6-57e1-4c83-84d7-2b86e9cdd8d0" name="Changes" comment="Корректировка">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/hw01.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/hw01.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/hw02.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/hw02.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.github/workflows/hw04.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/hw04.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw04/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/hw04/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw04/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/hw04/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697429351696</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Корректировка">
+      <created>1697430139387</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1697430139387</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
