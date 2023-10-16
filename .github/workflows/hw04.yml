@@ -30,7 +30,7 @@ jobs:
       working-directory: hw04
 
     - name: Test with unit test
-      run: python httptest.py
+      run: docker exec hw04_container python httptest.py
       working-directory: hw04
 
     - name: Run Apache Benchmark inside Docker container
