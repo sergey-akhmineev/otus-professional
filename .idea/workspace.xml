@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.github/workflows/hw04.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/hw04.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hw04/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/hw04/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw04/httptest.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw04/httptest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697433981906</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Корректировка">
+      <created>1697436547478</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1697436547478</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

@@ -21,6 +21,9 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.7"
+    - name: Install dependencies
+      run: python -m pip install httplib unittest socket re sys
+      working-directory: hw04
     - name: Test with unit test
       run: python httptest.py
       working-directory: hw04
