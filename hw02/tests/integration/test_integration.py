@@ -1,5 +1,5 @@
 import unittest
-import api
+import hw02.api
 import datetime
 from ..unit.test_unit import TestSuite, cases
 
@@ -13,7 +13,7 @@ class TestIntegration(TestSuite):
     def test_invalid_method_request(self, request):
         self.set_valid_auth(request)
         response, code = self.get_response(request)
-        self.assertEqual(api.INVALID_REQUEST, code)
+        self.assertEqual(hw02.api.INVALID_REQUEST, code)
         self.assertTrue(len(response))
 
     @cases([
@@ -25,7 +25,7 @@ class TestIntegration(TestSuite):
         request = {"account": "horns&hoofs", "login": "h&f", "method": "clients_interests", "arguments": arguments}
         self.set_valid_auth(request)
         response, code = self.get_response(request)
-        self.assertEqual(api.OK, code, arguments)
+        self.assertEqual(hw02.api.OK, code, arguments)
         self.assertEqual(len(arguments["client_ids"]), len(response))
         self.assertTrue(all(v and isinstance(v, list) and all(isinstance(i, str) for i in v)
                             for v in response.values()))

@@ -3,7 +3,7 @@ import datetime
 import functools
 import unittest
 
-import api
+import hw02.api
 
 
 def cases(cases):
@@ -24,18 +24,18 @@ class TestSuite(unittest.TestCase):
         self.settings = {}
 
     def get_response(self, request):
-        return api.method_handler({"body": request, "headers": self.headers}, self.context, self.settings)
+        return hw02.api.method_handler({"body": request, "headers": self.headers}, self.context, self.settings)
 
     def set_valid_auth(self, request):
-        if request.get("login") == api.ADMIN_LOGIN:
-            request["token"] = hashlib.sha512((datetime.datetime.now().strftime("%Y%m%d%H") + api.ADMIN_SALT).encode()).hexdigest()
+        if request.get("login") == hw02.api.ADMIN_LOGIN:
+            request["token"] = hashlib.sha512((datetime.datetime.now().strftime("%Y%m%d%H") + hw02.api.ADMIN_SALT).encode()).hexdigest()
         else:
-            msg = request.get("account", "") + request.get("login", "") + api.SALT
+            msg = request.get("account", "") + request.get("login", "") + hw02.api.SALT
             request["token"] = hashlib.sha512(msg.encode()).hexdigest()
 
     def test_empty_request(self):
         _, code = self.get_response({})
-        self.assertEqual(api.INVALID_REQUEST, code)
+        self.assertEqual(hw02.api.INVALID_REQUEST, code)
 
     @cases([
         {"account": "horns&hoofs", "login": "h&f", "method": "online_score", "token": "", "arguments": {}},
@@ -44,7 +44,7 @@ class TestSuite(unittest.TestCase):
     ])
     def test_bad_auth(self, request):
         _, code = self.get_response(request)
-        self.assertEqual(api.INVALID_REQUEST, code)
+        self.assertEqual(hw02.api.INVALID_REQUEST, code)
 
 
 if __name__ == "__main__":
