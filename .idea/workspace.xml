@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ab944d6-57e1-4c83-84d7-2b86e9cdd8d0" name="Changes" comment="Корректировка">
-      <change beforePath="$PROJECT_DIR$/hw04/httptest.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw04/httptest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw02/tests/integration/test_integration.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw02/tests/unit/test_unit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/hw02.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/hw02.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw02/test.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +19,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Python Script" />
       </list>
     </option>
@@ -33,6 +38,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -225,7 +231,35 @@
       <option name="project" value="LOCAL" />
       <updated>1697438197613</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Корректировка">
+      <created>1697438309853</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1697438309853</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Корректировка">
+      <created>1697438397521</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1697438397521</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Корректировка">
+      <created>1697442755027</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1697442755027</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Корректировка">
+      <created>1697442823668</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1697442823668</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
