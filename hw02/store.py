@@ -12,10 +12,10 @@ def retry(exceptions, tries=3, backoff_factor=0.3):
                     return f(*args, **kwargs)
                 except exceptions as e:
                     delay = backoff_factor * (2 ** attempt)
+                    print(f'Error: {e}, retrying in {delay} seconds ...')
                     time.sleep(delay)
 
         return wrapper
-
     return decorator
 
 

@@ -128,11 +128,11 @@ class TestGenderField(unittest.TestCase):
             api.GenderField().to_python(value)
 
     @cases([0, 1, 2, None])
-    def test_valid_gender(self, value):
+    def test_valid_gender_1(self, value):
         self.assertIsNone(api.GenderField().run_validator(value))
 
     @cases([-1, 3])
-    def test_valid_gender(self, value):
+    def test_valid_gender_2(self, value):
         with self.assertRaises(ValueError):
             api.GenderField().run_validator(value)
 

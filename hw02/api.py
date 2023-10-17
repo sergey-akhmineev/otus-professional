@@ -217,9 +217,12 @@ class OnlineScoreRequest(Request):
     def validate(self):
         super().validate()
         if not self._errors:
-            if self.phone and self.email: return
-            if self.first_name and self.last_name: return
-            if self.gender is not None and self.birthday: return
+            if self.phone and self.email:
+                return
+            if self.first_name and self.last_name:
+                return
+            if self.gender is not None and self.birthday:
+                return
             self._errors["arguments"] = "Неверный список аргументов"
 
 
@@ -305,7 +308,7 @@ class MainHTTPHandler(BaseHTTPRequestHandler):
             data_string = self.rfile.read(int(self.headers['Content-Length']))
             data_string = data_string.decode("utf-8")
             request = json.loads(data_string)
-        except:
+        except ValueError:
             code = BAD_REQUEST
 
         if request:
