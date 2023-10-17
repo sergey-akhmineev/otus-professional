@@ -26,4 +26,4 @@ jobs:
       run: flake8 .
       working-directory: hw02
     - name: Test with unit test
-      run:  python -m unittest discover -s hw02/tests/integration
+      run:  python -m unittest discover -s hw02 -v
