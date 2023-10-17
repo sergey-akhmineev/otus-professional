@@ -1,7 +1,7 @@
 import unittest
 import api
 import datetime
-from test_unit import TestSuite, cases
+from ..unit.test_unit import TestSuite, cases
 
 
 class TestIntegration(TestSuite):
