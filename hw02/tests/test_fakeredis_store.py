@@ -10,7 +10,7 @@ class TestStore(unittest.TestCase):
     @patch("redis.StrictRedis", fakeredis.FakeStrictRedis)
     def test_get_raises_on_connection_error(self):
         redis_storage = store.RedisStorage()
-        redis_storage.db.connected = False
+        redis_storage.db.get = MagicMock(side_effect=ConnectionError())
         storage = store.Storage(redis_storage)
         with self.assertRaises(ConnectionError):
             storage.get("key")

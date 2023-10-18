@@ -71,4 +71,5 @@ class Storage:
 
     @retry((TimeoutError, ConnectionError), MAX_RETRIES, BACKOFF_FACTOR)
     def cache_set(self, key, value, expires=None):
-        return self.storage.set(key, value, expires=expires)
+        self.storage.set(key, value, expires=expires)
+        return None
