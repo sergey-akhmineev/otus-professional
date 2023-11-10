@@ -34,3 +34,8 @@ jobs:
       run: |
         docker run -d --rm --name ycrawler_container ycrawler
       working-directory: hw11
+
+    - name: Docker logs container with server
+      run: |
+        docker logs -f ycrawler_container
+      working-directory: hw11
