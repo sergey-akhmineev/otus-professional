@@ -1,0 +1,30 @@
+name: hw12
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+
+jobs:
+  test:
+    name: Run server and test with Apache Benchmark
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Build Docker container
+      run: |
+        docker build -t ycrawler .
+      working-directory: hw12
+
+    - name: Run Docker container with server
+      run: |
+        docker run --rm ycrawler
+      working-directory: hw12
