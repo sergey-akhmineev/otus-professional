@@ -10,5 +10,5 @@ COPY . /app
 # Устанавливаем зависимости
 RUN pip install --no-cache-dir aiohttp async_timeout
 
-# Выполняем скрипт
-CMD ["python", "./YCrawler.py"]
+# Выполняем скрипт и ограничиваем его выполнение 30 минутами
+CMD /bin/sh -c "timeout 1800 python ./YCrawler.py"
