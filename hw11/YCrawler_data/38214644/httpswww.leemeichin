@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-11-10 Fri 00:22 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Switching to Elixir</title>
+<meta name="author" content="root" />
+<meta name="generator" content="Org Mode" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title="leemeichin.com latest posts"
+  href="https://www.leemeichin.com/rss.xml"
+/>
+<link rel="stylesheet" href="/css/terminal.css" />
+<link rel="stylesheet" href="/css/syntax.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<div class="site-nav">
+  <header class="site-logo">
+    <div class="logo site-prompt">
+      <a class="no-style" href="/">lee meichin</a>
+      <span>special topics in calamity something or other</span>
+    </div>
+  </header>
+  <nav class="site-menu">
+    <ul vocab="https://schema.org/" typeof="BreadcrumbList">
+      <li>
+        <a
+          href="https://github.com/leemeichin/blog"
+          class="icon-link"
+          title="Code @ Github"
+          >
+          &lt;/&gt;
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Switching to Elixir</h1>
+</header><p>
+A few months ago I started a new job at a company that uses Elixir as its main language on the backend. I've never written a line of Elixir or Erlang before in my life, but I've heard a lot about it and Erlang is familiar because I've played around with Prolog for a bit.
+</p>
+
+<p>
+Thanks to the heavily Ruby-inspired syntax, Elixir was a synch to pick up. I might not be an expert on best practices, architecture, and lower level Erlang concepts yet, but none of this has been a barrier to entry.
+</p>
+
+<p>
+In fact, I might go as far as saying that Elixir gives you a fun language (like Ruby) while leaving out the stateful footguns OOP languages give you. There are no classes, no instances, no inheritance&#x2026;it's immutable and functional and you're not bogged down by a static type system.
+</p>
+
+<p>
+I see this as a benefit because code that holds mutable state is immensely harder to maintain than code that doesn't, and it isn't always clear to a developer if state should be local to a function, to an instance, or to a class. In Ruby you'll tend to get a mix of all three in an attempt to build an intuitive DSL, because literally everything is an object and therefore every object can hold state. It's called an Eigenclass, which is like a class of a class, and every class has one (and is how one instance of a class can mutate the state of every other instance, without knowing about them, by modifying the eigenclass).
+</p>
+
+<p>
+Speaking of which, Elixir mimics Ruby in its support for DSLs (Domain Specific Languages) too, with a very familiar syntax. The key difference is that Elixir DSLs are compile-time macros and they generate runtime code, whereas Ruby DSLs depend on modifying the runtime by defining objects and methods dynamically.
+</p>
+
+<p>
+I like this because I don't need to write a test to confirm that I used a library correctly. Either I used the macro wrong and I get an error from the library, or the generated macro was wrong and I get an error from the compiler. All of this happens at compile time, so I can just focus on writing tests on my actual application logic.
+</p>
+
+<p>
+The pipeline syntax is nice, but I like Clojure's 'threading' operators a lot. They're not related to concurrency, you just have two operators: <code>-&gt;</code> is the same as Elixir's <code>|&gt;</code>, and it inserts the result of the previous expression into the first argument of the next function; <code>-&gt;&gt;</code> in Clojure inserts the same result into the <i>last</i> argument. It seems minor but works great with interop without having to write an anonymous function.
+</p>
+
+<p>
+I love the <code>with</code> expression, if only because it reminds me of Haskell and Lisp with <code>let</code>, while baking in <code>otherwise</code>. This basically lets you split a complex function in half, with the happy path in the top part and the error handling at the bottom. It works best with a <code>Result</code> tuple because if you can't pattern match on <code>{:ok, result}</code> then you have a recoverable error.
+</p>
+
+<p>
+Exceptions, then! In Ruby it's common to use exceptions for control flow. It often feels cleaner to do that because it's not common to return explicit error types; usually you either get a successful result or <code>nil</code> or <code>false</code>, and if you're lucky the error state was actually stored in one of the objects you were using. If you call <code>model.update(params)</code> in Ruby, then it returns <code>false</code> if it fails and updates <code>model.errors</code> with what went wrong. Mutable state.
+</p>
+
+<p>
+I'm happy to see the <code>Result</code> / <code>Either</code> monad get mainstream traction compared to that. Exceptions for exceptional stuff, and a tuple that gives you <code>ok</code> and <code>error</code> as a return value (or <code>left</code> and <code>right</code> with the <code>Either</code> type).
+</p>
+
+<p>
+I've only scratched the surface really, and I'm sure I'll have more thoughts as I continue to work, but after 3 months of Elixir I have to say that I <i>genuinely</i> enjoy writing it and it carries Ruby's torch of programming being fun.
+</p>
+</div>
+<div id="postamble" class="status">
+<footer>
+  <header>
+    <p class="modeline inverse-video">
+      -UUU:----F1&nbsp;&nbsp;Switching to Elixir&nbsp;&nbsp;&nbsp;&nbsp;Bot
+      L100%&nbsp;&nbsp;Git:main&nbsp;&nbsp;(HTML+) ----------
+    </p>
+  </header>
+</footer>
+</div>
+</body>
+</html>

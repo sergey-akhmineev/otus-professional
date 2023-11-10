@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- 2023-11-06 Mon 19:46 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>Typing Fast Is About Latency, Not Throughput</title>
+<meta name="author" content="kqr" />
+<meta name="generator" content="Org Mode" />
+
+        <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="atom" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link rel="apple-touch-icon-precomposed" href="/image/favicon-152.png" />
+        <link href="/etc/style/css/htmlize-classes.css" rel="stylesheet" />
+        <link href="/etc/style/css/main.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/lib/katex/katex.min.css" />
+        <script src="/lib/katex/katex.min.js"></script>
+        <script src="/lib/katex/contrib/auto-render.min.js"></script>
+    </head>
+    <body>
+
+        <header>
+            <div class="title">
+                <h1><a href="/">Two Wrongs</a></h1>
+                <h2>Typing Fast Is About Latency, Not Throughput</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="tags">Tags</a></li>
+                    <li><a href="feed">Feed</a></li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="https://xkqr.org/">xkqr.org</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <article>
+            <header>
+<h1>Typing Fast Is About Latency, Not Throughput</h1>
+<div class="article-meta">
+<div>by <address>kqr</address>, 
+published <time pubdate datetime="2023-11-06T00:00:00+0100">2023-11-06</time>
+</div><div>Tags: <ul class="tag-list "><li><a href="tags.html#meta_programming">meta_programming</a></li>
+<li><a href="tags.html#technology">technology</a></li></ul></div>
+</div>
+</header>
+
+            <div class="content">
+                <p>
+A common misconception in discussions about typing speed is that
+</p>
+
+<blockquote>
+<p>
+any speed above, say, maybe 80 <abbr>wpm</abbr>, isn’t going to hinder anyone when trying to
+put anything into the computer
+</p>
+</blockquote>
+
+<p>
+This particular version comes from <a href="https://bladh.ninja/qwerty.html">an article that&rsquo;s really about something
+else</a>, but I&rsquo;ve heard it in almost every discussion. Let&rsquo;s examine it.
+</p>
+
+<p>
+To be clear, at a steady state in a mature project, I get something like 125
+lines of code into production per week. If a line of code corresponds to
+something like 10 words, and we divide that by my 35-hour work week<label class="footref" for="fn.1">1</label><input id="fn.1" class="footref-toggle" type="checkbox" /><span class="sidenote"><sup>1</sup> Bless
+Sweden and their generous culture around parental leave.</span>, it would seem like I
+can type only one word per minute and still get my job done.
+</p>
+
+<p>
+But the problem isn&rsquo;t throughput. If throughput was the concern, most
+professionals could get by with far less than 80 words per minute. Even writers
+who work in their natural language struggle with producing more than a few pages
+per day; counting charitably, that&rsquo;s less than 5 words per minute.
+</p>
+
+<p>
+Throughput is not the issue. Latency is.
+</p>
+
+<p>
+What can we do when we are able to type faster?
+</p>
+
+<ul class="org-ul">
+<li><p>
+Someone writing prose can try multiple ways of shaping their sentences and see
+how the sentences interact with each other.
+</p>
+
+<p>
+When I write articles for this site, I&rsquo;m sure I produce well over 5× the
+content that ends up in the final article, re-writing and re-structuring and
+deleting things continuously. This happens very quickly, and I don&rsquo;t do it
+when I write on a touchscreen or with pen-and-paper, because I write too
+slowly on those media. Fast typing unlocks this technique.
+</p></li>
+
+<li><p>
+Someone writing code can think of how to structure the code, then put it down
+into code and very quickly move on to think about the next thing. It&rsquo;s
+difficult to type and think at the same time, so any time spent writing is a
+pause in thoughts, which can derail the flow.
+</p>
+
+<p>
+When I write code on a touchscreen or a small keyboard, I find it harder to
+keep track of where I&rsquo;m going next, because it takes so damn long to get a
+line of code out of my head and onto the screen.
+</p></li>
+</ul>
+
+<p>
+You can argue that someone writing at 80 words per minute can get a line of
+code down in 8 seconds, and learning to write at 120 words per minute will
+improve this by a mere three seconds, so what&rsquo;s the big deal?
+</p>
+
+<p>
+I don&rsquo;t have any science to point to, but imagine being forced to sit and do
+nothing (not even think!) for three seconds after every five seconds of typing.
+That would drive me up the wall!
+</p>
+<footer><!--Footnotes--><h1>Sidenotes</h1>
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">Bless
+Sweden and their generous culture around parental leave.</p></div></div>
+
+</footer>
+            </div>
+            
+        </article>
+
+        <footer>
+            <p>Comments? <a href="/about">Send me an email.</a><br />I will
+                publish your comment on this site as soon as I'm able.</p>
+
+            <p>&nbsp;</p>
+
+            <p>You can show gratitude
+                <a href="https://buymeacoff.ee/kqr">by buying me a coffee</a>,
+                <em>iff</em> you want to. That helps me write more.</p>
+
+            <div class="shoutout">
+                Shoutout to my amazing wife <span class="redacted">
+                &nbsp;</span> without whose support I would never
+                make it past the first sentence. ♥
+            </div>
+        </footer>
+
+        <script type="text/javascript">
+         renderMathInElement(document.body);
+        </script>
+  </body>
+</html>

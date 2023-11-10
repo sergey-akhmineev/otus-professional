@@ -4,12 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ab944d6-57e1-4c83-84d7-2b86e9cdd8d0" name="Changes" comment="Корректировка">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw11/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw11/YCrawler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/otus-professional.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/otus-professional.iml" afterDir="false" />
+    <list default="true" id="3ab944d6-57e1-4c83-84d7-2b86e9cdd8d0" name="Changes" comment="Финишный пуш">
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38185911/httpsgithub.comBroke" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38199869/httpsblog.gingerbear" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38202729/httpmbtaviz.github.i" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38203574/httpsstartupceo.com2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38203668/httpswww.folklore.or" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38204378/httpscodeberg.orggso" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38205357/httpswww.threads.net" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38206973/httpswww.nango.devso" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38207024/httpsshreyans.orggoo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38207307/httpsnews.ycombinato" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38207743/httpswww.righto.com2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38208016/httpshu.ma.neaipin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38208334/httpsstore.steampowe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38209680/httpswww.scientifica" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38210574/httpsmonaspace.githu" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38211383/httpsgoing-medieval" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38211798/httpsnews.fiu.edu202" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38212538/httpswww.wsj.comscie" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38212712/httpslinuximpact.com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38212749/httpswww.washingtonp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38212904/httpswww.wsj.combusi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38213004/httpsmc-stan.orguser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38213158/httpstwo-wrongs.comt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38213325/httpswww.leemeichin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38213424/httpsworkplace.stack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38214553/httpswww.airstreet.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38214644/httpswww.leemeichin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/38214915/httpsxeiaso.netnotes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw11/YCrawler_data/YCrawler_list.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -389,7 +414,47 @@
       <option name="project" value="LOCAL" />
       <updated>1697615410627</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Корректировка">
+      <option name="closed" value="true" />
+      <created>1699589407839</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1699589407839</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Корректировка">
+      <option name="closed" value="true" />
+      <created>1699589649546</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1699589649546</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Корректировка">
+      <option name="closed" value="true" />
+      <created>1699589837309</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1699589837309</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Корректировка">
+      <option name="closed" value="true" />
+      <created>1699589962701</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1699589962701</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Корректировка">
+      <option name="closed" value="true" />
+      <created>1699590225207</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1699590225207</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -406,6 +471,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Корректировка" />
-    <option name="LAST_COMMIT_MESSAGE" value="Корректировка" />
+    <MESSAGE value="Финишный пуш" />
+    <option name="LAST_COMMIT_MESSAGE" value="Финишный пуш" />
   </component>
 </project>

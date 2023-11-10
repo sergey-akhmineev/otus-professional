@@ -1,0 +1,317 @@
+<HTML>
+
+<head>
+
+<title>Folklore.org: Calculator Construction Set</TITLE>
+<link rel="stylesheet" type="text/css" href="css/folklore.css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.folklore.org/folklore.xml">
+<link rel="shortcut icon" href="images/macfavicon.ico?v=1" />
+
+<script type="text/javascript">
+<!--
+var pageHandler = null;
+var fProjectName = "Macintosh";
+var fStoryName = "Calculator_Construction_Set.txt";
+var fStoryIndex = "";
+
+//-->
+</script>
+
+<script type="text/javascript" src="js/storyview.js"></script>
+<script type="text/javascript">
+<!--
+
+function initJs() {
+  var options = {};
+  pageHandler = new folklore.Story();
+}
+
+//-->
+</script>
+</head>
+
+<body text="#000000" onload="initJs()" onunload="pageHandler.unload()">
+<div class="redraw-placeholder"/>
+<div class="logo-bar">
+  <a href="index.py"><IMG src="images/logo.gif" width="429" height="62" alt="folklore.org" border="0"></a>
+</div>
+
+<div class="about-bar">
+  <div class="m1">
+  <a href="/" class="header-link">Home</a>&nbsp;|&nbsp;<a href="html/about.html" class="header-link">About Folklore</a>
+  </div>
+</div><table><tr><td valign="top"></td><td valign="top"><div class="story-view-header-bar">
+
+<table width="100%"><tr>
+<td align=left width="32"><a href="ProjectView.py?project=Macintosh&sortOrder=Sort+by+Date">
+  <img src="images/Macintosh/needlemac.gif" height=32 border=0></a>
+</td>
+<td>
+  <a href="ProjectView.py?project=Macintosh&sortOrder=Sort+by+Date">
+  <font size=3>The Original Macintosh:</a>&nbsp;&nbsp;</font>
+</td>
+<td align=right>
+ 
+  <a href="StoryView.py?project=Macintosh&story=&sortOrder=Sort+by+Date">
+    <img src="images/leftarrow.gif" border=0"></a>
+ 
+
+  <span class="story-view-header-bar-count">&nbsp;37 of 127&nbsp;</span>
+  
+ 
+  <a href="StoryView.py?project=Macintosh&story=Mister_Macintosh.txt&sortOrder=Sort+by+Date">
+    <img src="images/rightarrow.gif" border=0">
+  </a>
+ 
+</td>
+</tr></table>
+
+</div><div class="story-view-header">
+  <div class="story-view-title">Calculator Construction Set
+  
+  </div>
+
+  <table>
+    <tr>
+      <td align="right"><span class="story-view-label">Author:</span></td>
+      <td align="left"><span class="story-view-value">Andy Hertzfeld</span></td>
+    </tr>
+
+    <tr>
+      <td align="right"><span class="story-view-label">Date:</span></td>
+      <td align="left"><span class="story-view-value">February 1982</span></td>
+    </tr>
+
+    
+
+        
+      <tr>
+        <td align="right"><span class="story-view-label">Characters:</span></td>
+        <td align="left"><span class="story-view-value">Chris Espinosa, Steve Jobs, Donn Denman</span></td>
+      </tr>
+   
+
+        
+      <tr>
+        <td align="right"><span class="story-view-label">Topics:</span></td>
+        <td align="left"><span class="story-view-value">Software Design</span></td>
+      </tr>
+    
+
+    <tr>
+      <td align="right"><span class="story-view-label">Summary:</span></td>
+      <td align="left"><span class="story-view-value">Chris tries to make a Steve-approved calculator</span></td>
+    </tr>
+  </table>
+</div><div class="story-view-body">
+  
+  <div class="story-main-image-with-caption">
+    <table>
+    <tr><td>
+      
+      <img class="story-main-image" src="images/Macintosh/calculator.gif"/>
+      
+    </td></tr>
+    <tr><td>
+      <span class="story-main-caption">The Calculator</span>
+    </td></tr>
+    </table>
+  </div>
+  
+  <div class="story-main-content">
+    <p class="story-firstp">Chris Espinosa was one of Apple's earliest and youngest employees, who started work for the company at the ripe age of 14.  He left Apple in 1978 to go to college at UC Berkeley, but he continued to do freelance work during the school year, like writing the Apple II Reference Manual, the replacement for the legendary "Red Book".</p><br/>
+<br/>
+In the summer of 1981, Steve Jobs convinced Chris to drop out of school to come work on the Mac team full time, arguing that he could go back to school anytime, but there'd only be one chance to help shape the Macintosh.   Chris dropped out of school to become the manager of documentation for the Macintosh, starting in August 1981.<br/>
+<br/>
+We needed technical documentation right away, since we planned to seed third party developer in only a few months.  Since the most important part of the Macintosh software was the Quickdraw graphics package, Chris decided to start with documenting Quickdraw.<br/>
+<br/>
+Chris wanted to write a demo program using Quickdraw, in order to better understand it.  He got excited about the idea of what we called "desk ornaments", which at that point were not implemented yet.  He decided to work on a Quickdraw program to draw the calculator.<br/>
+<br/>
+After playing around for a while, he came up with a calculator that he thought looked pretty good.  But the acid test was showing it to Steve Jobs, in his role as our esthetic compass,  to see what he thought.<br/>
+<br/>
+We all gathered around as Chris showed the calculator to Steve and then held his breath, waiting for Steve's reaction.  "Well, it's a start", Steve said, "but basically, it stinks.  The background color is too dark, some lines are the wrong thickness, and the buttons are too big."  Chris told Steve he'll keep changing it, until Steve thought he got it right.<br/>
+<br/>
+So, for a couple of days, Chris would incorporate Steve's suggestions from the previous day, but Steve would continue to find new faults each time he was shown it.  Finally, Chris got a flash of inspiration.<br/>
+<br/>
+The next afternoon, instead of a new iteration of the calculator, Chris unveiled his new approach, which he called "the Steve Jobs Roll Your Own Calculator Construction Set".  Every decision regarding graphical attributes of the calculator were parameterized by pull-down menus.  You could select line thicknesses, button sizes, background patterns, etc.<br/>
+<br/>
+Steve took a look at the new program, and immediately started fiddling with the parameters.  After trying out alternatives for ten minutes or so, he settled on something that he liked.  When I implemented the calculator UI (Donn Denman did the math semantics) for real a few months later, I used Steve's design, and it remained the standard calculator on the Macintosh for many years, all the way up through OS 9.
+  </div>
+</div><div class="story-view-footer-bar">
+<br/>
+<table width="100%"><tr>
+<td align=left>
+  
+     <a href="StoryView.py?project=Macintosh&story=&sortOrder=Sort+by+Date">
+      <table><tr>
+        <td><img src="images/leftarrow.gif" class="story-footer-arrow" /></td>
+        <td><div class="story-view-footer-title-container"><span class="story-view-footer-title"></span></div></td>
+      </tr></table>
+    </a>
+  
+</td>
+
+<td align=center class="story-view-footer-backlink">
+  <a href="ProjectView.py?project=Macintosh&sortOrder=Sort+by+Date">Back to The Original Macintosh</a>
+</td>
+
+<td align=right>
+  
+    <a href="StoryView.py?project=Macintosh&story=Mister_Macintosh.txt&sortOrder=Sort+by+Date">
+      <table><tr>
+        <td><div class="story-view-footer-title-container"><span class="story-view-footer-title">Mister Macintosh</span></div></td>
+        <td><img src="images/rightarrow.gif" class="story-footer-arrow" /></td>
+      </tr></table>
+    </a>
+  
+    
+</td>
+
+</tr></table>
+<br/>
+</div></td><td valign="top"><div class="attribute-box">
+  <div class="attribute-box-title">Login</div>
+  <div class="attribute-box-contents">
+    <form action="login" method="POST">
+      
+      <font size=-1>Account Name:</font><br>
+      <input type="TEXT" name="username" size="16" value=""  style="margin-bottom: 4px"><br>
+      <font size=-1>Password:</font><br>
+      <input type="hidden" name="projectname" value="Macintosh">
+      
+        <input type="hidden" name="filename" value="Calculator_Construction_Set.txt">
+      
+      <input type="password" name="password" size="16"><br/>
+      <input type="submit" name="login" value="Log in" style="margin-top: 8px">
+    </form>
+    
+    <center>
+      <a href="html/createAccount.html"><font size=-1>Create new account</font></a>
+   </center>
+  </div>
+</div><div class="attribute-box">
+  <div class="attribute-box-title">Related Stories</div>
+  <div class="attribute-box-contents">
+    
+      <div class="attribute-box-entry">
+        • <a href="StoryView.py?project=Macintosh&story=Desk_Ornaments.txt">
+          Desk Ornaments</a>
+      </div>
+    
+      <div class="attribute-box-entry">
+        • <a href="StoryView.py?project=Macintosh&story=Puzzle.txt">
+          The Puzzle</a>
+      </div>
+    
+  </div>
+</div><div class="attribute-box">
+  <div class="attribute-box-title">Rating</div>
+  <div class="attribute-box-contents">
+
+    <span class="story-rating-value">Overall Rating:&nbsp;4.64</span>
+    <br/>
+    <img src="images/stars.5.gif" border=0 />
+    <b>(best)</b>
+    <div class="story-rating-login-message" style= "display: inline"><a href="html/createAccount.html">Login</a> to add your own ratings</div>
+    <div class style="display: none">
+      <form id="rating-form" method=POST action="updaterating">
+        <input type=hidden name="project" value="Macintosh">
+        <input type=hidden name="story" value="Calculator_Construction_Set.txt">
+        <input type=hidden name="userId" value="None">
+
+        <br><font size=-1>Your rating:</font<<br>
+        <div onchange="pageHandler.updateRating(event)">
+        <table border=0 cellpadding=0 cellspacing=0><tr>
+          <td width="24"><input type=radio name="value" value="1" ><br><font size=-3>&nbsp;&nbsp;1</font></td>
+          <td width="24"><input type=radio name="value" value="2" ><br><font size=-3>&nbsp;&nbsp;2</font></td>
+          <td width="24"><input type=radio name="value" value="3" ><br><font size=-3>&nbsp;&nbsp;3</font></td>
+          <td width="24"><input type=radio name="value" value="4" ><br><font size=-3>&nbsp;&nbsp;4</font></td>
+          <td width="24"><input type=radio name="value" value="5" ><br><font size=-3>&nbsp;&nbsp;5</font></td>
+        </tr></table>
+        </div>
+      </form>
+    </div>
+  </div>
+</div></td></tr></table><div class="comments-section"><a name="comments">
+<div class="story-comments-header">
+  
+    <img class="story-comments-arrow" src="images/triangle.gif"/><span class="story-comments-count">5 Comments</span>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="story-comments-show-button">Show Comments</button>
+    
+      <button class="story-comments-add-button">Add New Comment</button>
+    
+  
+</div>
+</a><div class="story-comments-container" style="display:none"><div class="story-comment story-comment-even" commentindex="0">
+  <div class="story-comment-metadata">from Steve Kirks on February 11, 2004 20:32:51
+  
+  </div>
+  <div class="story-comment-body">I absolutely loved this story.  It's been a standing dream of mine to be able to do the programming equivalent of "Stump the Band".
+</div>
+  
+</div><div class="story-comment story-comment-odd" commentindex="0">
+  <div class="story-comment-metadata">from yuhong on July 12, 2007 21:07:32
+  
+  </div>
+  <div class="story-comment-body">Except the order of the +, -, and * signs in the original system were different than the numeric keypad of the Mac Plus. This was fixed with System 3.2.
+</div>
+  
+</div><div class="story-comment story-comment-even" commentindex="0">
+  <div class="story-comment-metadata">from Theodore MacAllistair on June 19, 2012 17:51:32
+  
+  </div>
+  <div class="story-comment-body">I just checked the Mac OS 9 calculator, and it's more or less identical to the one in the picture.
+</div>
+  
+</div><div class="story-comment story-comment-odd" commentindex="0">
+  <div class="story-comment-metadata">from bryon bougie on June 19, 2012 20:02:07
+  
+  </div>
+  <div class="story-comment-body">too bad they didn't leave the editor in so that users could change how their calculator looked. We'd probably still have calculators today that could be edited.
+</div>
+  
+</div><div class="story-comment story-comment-even" commentindex="0">
+  <div class="story-comment-metadata">from Cecil Meeks on April 27, 2018 19:39:19
+  
+  </div>
+  <div class="story-comment-body">The biggest calculator mistake in history is when Microsoft messed up the default calculator in Windows 10.  It's too clumsy to use. </div>
+  
+</div><div class="story-comment-add" style="display:none">
+<form method=post action="AddComment">
+<input type=hidden name="project" value="Macintosh">
+<input type=hidden name="story" value="Calculator_Construction_Set.txt">
+
+<table width="100%" bgcolor="#bbbbdd">
+
+
+  <tr><td align=right width="20%"><b>User Name:</b></td><td align=left><input type=text name="account" value="" size=24></td></tr>
+  <tr><td align=right width="20%"><b>Password:</b></td><td align=left><input type=password name="password" value="" size=24></td></tr>
+
+
+<tr><td align=right width="20%"><b>Your Comment:</b></td>
+    <td align=left><textarea wrap="virtual" name="body" rows="10" cols="60"></textarea></td>
+</tr>
+<tr><td align=right width="20%">&nbsp;</td><td align=left>
+  <input type=submit name="addcommentvalue" value="Add Comment" onclick="pageHandler.refreshComments()">
+  <input type=submit name="cancelcomment" value="Cancel Comment" 
+    onclick="document.getElementsByClassName('story-comment-add')[0].style.display = 'None'"
+    ></td>
+</tr>
+</table>
+
+</form>
+</div></div></div><br/>
+<center>
+<div class="story-footer">
+<table><tr>
+<td>
+<a href="http://creativecommons.org/licenses/by-nc/1.0/"><img alt="Creative Commons License" border="0" src="images/somerights.gif"/></a></td>
+<td>The text of this story is licensed under a
+<a href="http://creativecommons.org/licenses/by-nc/1.0/">Creative Commons License</a>.</td>
+</tr></table>
+</div>
+</center></div>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+Ycrawler запущен с опциями: PERIOD=30, LIMIT=30, PATH=./YCrawler_data, CONNECTIONS_LIMIT=3, LOG_FILE=YCrawler.log
+Downloading top 30 stories (iteration 0)
+Запрос превысил лимит времени ожидания для: https://www.bbc.co.uk/news/technology-67366306
+Downloading took 32.776 seconds
+Waiting 30 sec...
+Downloading top 30 stories (iteration 0)
+Ошибка при запросе https://www.bbc.co.uk/news/technology-67366306: Cannot connect to host www.bbc.co.uk:443 ssl:default [Удаленный хост принудительно разорвал существующее подключение]
+Downloading took 29.608 seconds
+Waiting 30 sec...
+Downloading top 30 stories (iteration 0)
+Ошибка при запросе https://www.bbc.co.uk/news/technology-67366306: Cannot connect to host www.bbc.co.uk:443 ssl:default [Удаленный хост принудительно разорвал существующее подключение]
+Запрос превысил лимит времени ожидания для: https://linuximpact.com/play-the-first-ever-text-adventure-game-in-your-linux-terminal/
+Downloading took 32.311 seconds
+Waiting 30 sec...
+Downloading top 30 stories (iteration 0)
+Запрос превысил лимит времени ожидания для: https://www.bbc.co.uk/news/technology-67366306
+Downloading took 32.535 seconds
+Waiting 30 sec...
+Downloading top 30 stories (iteration 0)
+Ошибка при запросе https://www.bbc.co.uk/news/technology-67366306: Cannot connect to host www.bbc.co.uk:443 ssl:default [Удаленный хост принудительно разорвал существующее подключение]
+Запрос превысил лимит времени ожидания для: https://linuximpact.com/play-the-first-ever-text-adventure-game-in-your-linux-terminal/
+Downloading took 32.257 seconds
+Waiting 30 sec...
+Downloading top 30 stories (iteration 0)
+Запрос превысил лимит времени ожидания для: https://linuximpact.com/play-the-first-ever-text-adventure-game-in-your-linux-terminal/
+Запрос превысил лимит времени ожидания для: https://www.bbc.co.uk/news/technology-67366306
+Downloading took 32.680 seconds
+Waiting 30 sec...
+Downloading top 30 stories (iteration 0)
+Ошибка при запросе https://www.bbc.co.uk/news/technology-67366306: Cannot connect to host www.bbc.co.uk:443 ssl:default [Удаленный хост принудительно разорвал существующее подключение]
+Запрос превысил лимит времени ожидания для: https://linuximpact.com/play-the-first-ever-text-adventure-game-in-your-linux-terminal/
+Downloading took 33.377 seconds
+Waiting 30 sec...
+Downloading top 30 stories (iteration 0)
+Запрос превысил лимит времени ожидания для: https://linuximpact.com/play-the-first-ever-text-adventure-game-in-your-linux-terminal/
+Запрос превысил лимит времени ожидания для: https://www.bbc.co.uk/news/technology-67366306
+Downloading took 32.612 seconds
+Waiting 30 sec...
+Downloading top 30 stories (iteration 0)
+Запрос превысил лимит времени ожидания для: https://www.bbc.co.uk/news/technology-67366306
+Downloading took 32.545 seconds
+Waiting 30 sec...
+Downloading top 30 stories (iteration 0)
+Ошибка при запросе https://www.bbc.co.uk/news/technology-67366306: Cannot connect to host www.bbc.co.uk:443 ssl:default [Удаленный хост принудительно разорвал существующее подключение]
+Downloading took 27.636 seconds
+Waiting 30 sec...
+Downloading top 30 stories (iteration 0)
+Ошибка при запросе https://www.bbc.co.uk/news/technology-67366306: Cannot connect to host www.bbc.co.uk:443 ssl:default [Удаленный хост принудительно разорвал существующее подключение]
+Запрос превысил лимит времени ожидания для: https://linuximpact.com/play-the-first-ever-text-adventure-game-in-your-linux-terminal/
+Downloading took 32.415 seconds
+Waiting 30 sec...
