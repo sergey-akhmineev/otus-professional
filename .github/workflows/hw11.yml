@@ -1,4 +1,4 @@
-name: hw12
+name: hw11
 
 on:
   push:
@@ -23,14 +23,14 @@ jobs:
       run: python -m pip install flake8
     - name: Lint with flake8
       run: flake8 .
-      working-directory: hw012
+      working-directory: hw11
 
     - name: Build Docker container
       run: |
         docker build . -t ycrawler
-      working-directory: hw12
+      working-directory: hw11
 
     - name: Run Docker container with server
       run: |
         docker run -d --rm --name ycrawler
-      working-directory: hw12
+      working-directory: hw11
