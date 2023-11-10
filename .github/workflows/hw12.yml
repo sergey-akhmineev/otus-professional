@@ -12,19 +12,25 @@ permissions:
 
 jobs:
   test:
-    name: Run server and test with Apache Benchmark
+    name: Run YCrawler
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Install dependencies
+      run: python -m pip install flake8
+    - name: Lint with flake8
+      run: flake8 .
+      working-directory: hw012
+
     - name: Build Docker container
       run: |
-        docker build -t ycrawler .
+        docker build . -t ycrawler
       working-directory: hw12
 
     - name: Run Docker container with server
       run: |
-        docker run --rm ycrawler
+        docker run -d --rm --name ycrawler
       working-directory: hw12
