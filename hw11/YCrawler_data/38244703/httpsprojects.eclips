@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html lang="en" dir="ltr" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# book: http://ogp.me/ns/book# profile: http://ogp.me/ns/profile# video: http://ogp.me/ns/video# product: http://ogp.me/ns/product# content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#">
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="//fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200:0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" type="text/css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="https://projects.eclipse.org/sites/all/themes/solstice/_themes/solstice_eclipse_projects/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="Purpose Connecting Automotive Apps and Services, Everywhere" />
+<link rel="canonical" href="https://projects.eclipse.org/projects/automotive.uprotocol" />
+<link rel="shortlink" href="https://projects.eclipse.org/node/27021" />
+<meta property="og:site_name" content="projects.eclipse.org" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Eclipse uProtocol" />
+<meta property="og:url" content="https://projects.eclipse.org/projects/automotive.uprotocol" />
+<meta property="og:description" content="Purpose Connecting Automotive Apps and Services, Everywhere" />
+<meta property="og:updated_time" content="2023-09-13T15:26:25-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://projects.eclipse.org/projects/automotive.uprotocol" />
+<meta name="twitter:title" content="Eclipse uProtocol" />
+<meta name="twitter:description" content="Purpose Connecting Automotive Apps and Services, Everywhere" />
+<meta property="article:published_time" content="2023-05-02T10:31:37-04:00" />
+<meta property="article:modified_time" content="2023-09-13T15:26:25-04:00" />
+<meta itemprop="name" content="Eclipse uProtocol" />
+<meta itemprop="description" content="Purpose Connecting Automotive Apps and Services, Everywhere" />
+<meta name="dcterms.title" content="Eclipse uProtocol" />
+<meta name="dcterms.creator" content="Maria Teresa Delgado" />
+<meta name="dcterms.description" content="Purpose Connecting Automotive Apps and Services, Everywhere" />
+<meta name="dcterms.date" content="2023-05-02T10:31-04:00" />
+<meta name="dcterms.type" content="Text" />
+<meta name="dcterms.format" content="text/html" />
+<meta name="dcterms.identifier" content="https://projects.eclipse.org/projects/automotive.uprotocol" />
+  <title>Eclipse uProtocol | projects.eclipse.org</title>
+  <link type="text/css" rel="stylesheet" href="https://projects.eclipse.org/sites/default/files/css/css_lQaZfjVpwP_oGNqdtWCSpJT1EMqXdMiU84ekLLxQnc4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://projects.eclipse.org/sites/default/files/css/css_x7Y1FTDYqKguvbbY4EvoDVgghkFUdizNtjGBLJWZMQM.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://projects.eclipse.org/sites/default/files/css/css_7c7Cy8yE3FybnMWDV-yikGVKqfCO8kVsJiBXJJ86hjg.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://projects.eclipse.org/sites/default/files/css/css_fDpxDar8BrHKV3t-TzQrWFMB9sL6HqKfOGFeckAsado.css" media="screen" />
+  <script src="https://projects.eclipse.org/sites/default/files/js/js_bu9AdsQjsz_6Nfl6xjluK8orG6hwD03RvL6J-M-3f00.js"></script>
+<script src="https://projects.eclipse.org/sites/default/files/js/js_6wB7_RH3hNT_viZwOlvXgQ7bvciK-Mir9CVHAkENV64.js"></script>
+<script src="//www.google.com/jsapi"></script>
+<script src="https://projects.eclipse.org/sites/default/files/js/js_oyt0yvCTlrlzbZXu-JpDrIitgrS7C64_LQlDOBAzoPU.js"></script>
+<script>google.load("visualization", "1", {packages:["corechart"]});google.setOnLoadCallback(function() {
+        var data = new google.visualization.DataTable();
+               data.addColumn('string', 'Period');
+               data.addColumn('number', 'Commits');data.addRows([["2023-05",14],["2023-06",27],["2023-07",4],["2023-08",32],["2023-09",76],["2023-10",217],["2023-11",41]]);var chart = new google.visualization.ColumnChart(document.getElementById('chart65516bccd22aa'));chart.draw(data,{"titlePosition":"none","backgroundColor":"transparent","width":500,"height":200,"chartArea":{"left":"10%","right":"10%","top":"10%","bottom":"10%"},"vAxis":{"logScale":false},"hAxis":{"slantedText":false},"legend":"none"});})</script>
+<script src="https://projects.eclipse.org/sites/default/files/js/js_u4lEG6HlRIal_Ps94fWopfyitczfpSm5CC24DKvIxrs.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"solstice_eclipse_projects","theme_token":"oaDaWdeq0Z0qGuMau9MWtSWGeBJ2h6bCjZ16gbOgRY4","js":{"sites\/all\/themes\/solstice\/public\/js\/eclipsefdn\/eclipsefdn.participating-organizations.js":1,"public:\/\/google_tag\/google_tag.script.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"\/\/www.google.com\/jsapi":1,"sites\/all\/modules\/contrib\/tray\/tray.js":1,"0":1,"sites\/all\/themes\/solstice\/public\/js\/main.js":1},"css":{"modules\/system\/system.base.css":1,"sites\/all\/modules\/custom\/pmi\/bugzilla\/bugzilla.css":1,"sites\/all\/modules\/custom\/pmi\/commons\/commons.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/custom\/pmi\/elections\/elections.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/custom\/pmi\/mailing_list\/mailing_list.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/custom\/pmi\/projects\/projects.css":1,"sites\/all\/modules\/custom\/pmi\/projects_downloads\/projects_downloads.css":1,"sites\/all\/modules\/custom\/pmi\/projects\/project_blocks\/project_blocks.css":1,"sites\/all\/modules\/custom\/pmi\/project_reviews\/project_reviews.css":1,"sites\/all\/modules\/custom\/pmi\/project_state\/project_state.css":1,"sites\/all\/modules\/custom\/pmi\/releases_bugzilla\/releases_bugzilla.css":1,"sites\/all\/modules\/custom\/pmi\/simultaneous_releases\/release_picker\/release_picker.css":1,"sites\/all\/modules\/custom\/pmi\/summary_block\/summary_block.css":1,"sites\/all\/modules\/custom\/pmi\/user_profiles\/user_profiles.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/tray\/tray.css":1,"sites\/all\/libraries\/fontawesome\/css\/font-awesome.css":1,"sites\/all\/themes\/solstice\/public\/css\/projects.css":1}},"tray":{"trayPath":"tray\/load"},"eclipseApiUrl":"https:\/\/api.eclipse.org","marketplaceUrl":"https:\/\/marketplace.eclipse.org","eclipseAccountsUrl":"https:\/\/accounts.eclipse.org","bootstrap":{"anchorsFix":"1","anchorsSmoothScrolling":"1","formHasError":1,"popoverEnabled":0,"popoverOptions":{"animation":1,"html":0,"placement":"right","selector":"","trigger":"click","triggerAutoclose":1,"title":"","content":"","delay":0,"container":"body"},"tooltipEnabled":0,"tooltipOptions":{"animation":1,"html":0,"placement":"auto left","selector":"","trigger":"hover focus","delay":0,"container":"body"}}});</script>
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-second page-node page-node- page-node-27021 node-type-project" >
+  <noscript aria-hidden="true"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WLCZXC" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager">Google Tag Manager</iframe></noscript>  <a class="sr-only" href="#content">Skip to main content</a>
+<header id="header-wrapper" role="banner" class="header-wrapper">
+      <div class="clearfix toolbar-container-wrapper">
+    <div class="container">
+      <div class="text-right toolbar-row row hidden-print">
+        <div class="col-md-24 row-toolbar-col">
+            <div id="row-toolbar" class="region region-toolbar text-right hidden-print solstice-region-element-count-1 row">
+  <div id="row-toolbar-col" class="col-md-24">
+    <section id="block-site-login-site-login-toolbar" class="block block-site-login block-region-toolbar site_login_toolbar block-site-login-toolbar clearfix">
+
+      
+  <div class="block-content">
+    <ul class="list-unstyled list-inline"><li weight="1"><a href="https://projects.eclipse.org/user/login?destination=node/27021"><i class="fa fa-sign-in fa-fw"></i> Log in</a></li>
+<li weight="2"><a class="toolbar-manage-cookies dropdown-toggle"><i class="fa fa-wrench"></i> Manage Cookies</a></li>
+</ul>  </div>
+
+</section> <!-- /.block -->
+  </div>
+</div>
+          </div>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+    <div id="header-row" class="row">
+      <div id="header_left" class="col-md-4 col-sm-5 hidden-xs">
+                  <a href="https://www.eclipse.org/"><img class="logo-eclipse-default img-responsive" width="160" typeof="foaf:Image" src="https://projects.eclipse.org/sites/all/themes/solstice/_themes/solstice_projects/logo.svg" alt="" title="projects.eclipse.org" /></a>        
+                  <a class="name navbar-brand element-invisible" href="/" title="Home">projects.eclipse.org</a>
+              </div>
+              <div  id="main-menu-wrapper" class="col-sm-19 col-md-20 margin-top-10">
+                    <div class="float-right hidden-xs" id="btn-call-for-action"><a href="//www.eclipse.org/downloads/" class="btn btn-huge btn-warning"><i class="fa fa-download"></i> Download</a></div>          <div class="navbar float-sm-right yamm" id="main-menu">
+            <div id="navbar-collapse-1" class="navbar-collapse collapse">
+                                  <ul class="menu nav navbar-nav"><li><a href="https://www.eclipse.org/projects/" target="_self">Projects</a></li><li><a href="https://www.eclipse.org/org/workinggroups/" target="_self">Working Groups</a></li><li><a href="https://www.eclipse.org/membership/" target="_self">Members</a></li><li class="dropdown visible-xs"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Community <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="http://marketplace.eclipse.org">Marketplace</a></li><li><a href="http://events.eclipse.org">Events</a></li><li><a href="http://www.planeteclipse.org/">Planet Eclipse</a></li><li><a href="https://www.eclipse.org/community/eclipse_newsletter/">Newsletter</a></li><li><a href="https://www.youtube.com/user/EclipseFdn">Videos</a></li><li><a href="https://blogs.eclipse.org">Blogs</a></li></ul></li><li class="dropdown visible-xs"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Participate <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="https://bugs.eclipse.org/bugs/">Report a Bug</a></li><li><a href="https://www.eclipse.org/forums/">Forums</a></li><li><a href="https://www.eclipse.org/mail/">Mailing Lists</a></li><li><a href="https://wiki.eclipse.org/">Wiki</a></li><li><a href="https://wiki.eclipse.org/IRC">IRC</a></li><li><a href="https://www.eclipse.org/org/research/">Research</a></li></ul></li><li class="dropdown visible-xs"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Eclipse IDE <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="https://www.eclipse.org/downloads">Download</a></li><li><a href="https://www.eclipse.org/eclipseide">Learn More</a></li><li><a href="https://help.eclipse.org">Documentation</a></li><li><a href="https://www.eclipse.org/getting_started">Getting Started / Support</a></li><li><a href="https://www.eclipse.org/contribute/">How to Contribute</a></li><li><a href="https://www.eclipse.org/ide/">IDE and Tools</a></li><li><a href="https://www.eclipse.org/forums/index.php/f/89/">Newcomer Forum</a></li></ul></li><li class="dropdown eclipse-more hidden-xs">
+        <a data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+        <ul class="dropdown-menu"><li><div class="yamm-content"><div class="row"><ul class="col-sm-8 list-unstyled"><li><p><strong>Community</strong></p></li><li><a href="http://marketplace.eclipse.org">Marketplace</a></li><li><a href="http://events.eclipse.org">Events</a></li><li><a href="http://www.planeteclipse.org/">Planet Eclipse</a></li><li><a href="https://www.eclipse.org/community/eclipse_newsletter/">Newsletter</a></li><li><a href="https://www.youtube.com/user/EclipseFdn">Videos</a></li><li><a href="https://blogs.eclipse.org">Blogs</a></li></ul><ul class="col-sm-8 list-unstyled"><li><p><strong>Participate</strong></p></li><li><a href="https://bugs.eclipse.org/bugs/">Report a Bug</a></li><li><a href="https://www.eclipse.org/forums/">Forums</a></li><li><a href="https://www.eclipse.org/mail/">Mailing Lists</a></li><li><a href="https://wiki.eclipse.org/">Wiki</a></li><li><a href="https://wiki.eclipse.org/IRC">IRC</a></li><li><a href="https://www.eclipse.org/org/research/">Research</a></li></ul><ul class="col-sm-8 list-unstyled"><li><p><strong>Eclipse IDE</strong></p></li><li><a href="https://www.eclipse.org/downloads">Download</a></li><li><a href="https://www.eclipse.org/eclipseide">Learn More</a></li><li><a href="https://help.eclipse.org">Documentation</a></li><li><a href="https://www.eclipse.org/getting_started">Getting Started / Support</a></li><li><a href="https://www.eclipse.org/contribute/">How to Contribute</a></li><li><a href="https://www.eclipse.org/ide/">IDE and Tools</a></li><li><a href="https://www.eclipse.org/forums/index.php/f/89/">Newcomer Forum</a></li></ul></div></div></li></ul></li>      <li class="dropdown eclipse-more main-menu-search">
+        <a data-toggle="dropdown" class="dropdown-toggle" role="button" aria-label="Open Google Search menu"><i class="fa fa-search"></i> <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li>
+            <!-- Content container to add padding -->
+            <div class="yamm-content">
+              <div class="row">
+                <div class="col-sm-24">
+                  <p>Search</p>
+                      <form action="https://www.eclipse.org/home/search" method="get">
+      <div class="form-group">
+        <input class="form-control margin-bottom-10" type="textfield" name="q" placeholder="Search">
+        <input class="btn btn-primary" type="submit" value="Submit">
+      </div>
+    </form>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </li></ul>                              </div>
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target="#navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                  class="icon-bar"></span> <span class="icon-bar"></span>
+              </button>
+                <a href="https://www.eclipse.org/" class="navbar-brand visible-xs"><img class="logo-eclipse-default-mobile img-responsive" width="174" typeof="foaf:Image" src="https://projects.eclipse.org/sites/all/themes/solstice/_themes/solstice_projects/logo.svg" alt="" title="projects.eclipse.org" /></a>              </div>
+          </div>
+        </div>
+                </div>
+  </div>
+</header>
+
+  <section id="breadcrumb" class="default-breadcrumbs hidden-print">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-24 padding-left-30">
+          <ol class="breadcrumb"><li><a href="//www.eclipse.org">Home</a></li>
+<li><a href="/">Projects</a></li>
+<li><a href="/projects/automotive">Eclipse Automotive</a></li>
+<li class="active">Eclipse uProtocol</li>
+</ol>        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<main role="main">
+  
+  <div id="main-page-content" class="margin-top-20 container">
+    <header role="banner" id="page-header">
+                </header>
+
+  <!-- /#page-header -->
+  <div id="main-content-row" class="row">
+    <section id="main-content" role="complementary" class="col-md-18 col-sm-16 margin-bottom-20">
+                  
+      
+      
+      
+              <a id="main-content"></a>
+        <div id="maint-content-area">
+          
+                      <h1  class="page-header">Eclipse uProtocol</h1>
+                          
+                      <h2 class="element-invisible">Primary tabs</h2><ul class="tabs--primary nav nav-tabs solstice-tabs"><li class="active"><a href="/projects/automotive.uprotocol" class="active">Overview<span class="element-invisible">(active tab)</span></a></li>
+<li><a href="/projects/automotive.uprotocol/downloads">Downloads</a></li>
+<li><a href="/projects/automotive.uprotocol/who">Who&#039;s Involved</a></li>
+<li><a href="/projects/automotive.uprotocol/developer">Developer Resources</a></li>
+<li><a href="/projects/automotive.uprotocol/governance">Governance</a></li>
+<li><a href="/projects/automotive.uprotocol/contact">Contact Us</a></li>
+</ul>          
+          
+          
+            <div class="region region-content solstice-region-element-count-1">
+    <section id="block-system-main" class="block block-system block-region-content block-main clearfix">
+
+      
+  <div class="block-content">
+    <article id="node-27021" class="node node-project node-promoted clearfix" about="/projects/automotive.uprotocol" typeof="sioc:Item foaf:Document">
+    <header>
+            <span property="dc:title" content="Eclipse uProtocol" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>      </header>
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><h2>Purpose</h2>
+<p>Connecting Automotive Apps and Services, Everywhere</p>
+<p>The purpose of this project shall be to provide a transport agnostic, layered communication protocol that builds on top of existing automotive and Internet standards, from the mechatronic layer (between ECUs, VMs, etc…) up to the Cloud, enabling a connected software defined vehicles.</p>
+<h2>Overview</h2>
+<p>The protocol is divided up into three layers:</p>
+<ul><li><strong>Application Layer (uP-L3):</strong>
+<ul><li>Responsible for business/application logic through definition of methods, topics, messages</li>
+<li>Core Platform uEs (uSubscription, uDiscovery, etc...)</li>
+</ul></li>
+<li><strong>Communication Layer (uP-L2):</strong>
+<ul><li>Describing data &amp; metadate in a common way using CloudEvents: publication/notificaitons, request/response, file transfer, etc...</li>
+<li>Routing &amp; Dispatching of events through Dispatchers (uBus, uStreamer, Device Proxy Router, Cloud Proxy)</li>
+</ul></li>
+<li><strong>Transport Layer (uP-L1):</strong>
+<ul><li>Sending &amp; receiving of events point-2-point between Software Entities (uEs)</li>
+<li>Session an connection over automotive &amp; Internet standards</li>
+</ul></li>
+</ul><p>For more information about uProtocol please visit: <a href="https://docs.google.com/presentation/d/1yfJ_ynBGHQTcnG1GhyMQyhmO66KUdVEQN7UE24iNoeU/edit?usp=share_link">Overview of uProtocol</a></p>
+<h2>Project Contents</h2>
+<p>The uProtocol project shall contain that contain a number of children repos that are:</p>
+<ol><li><strong><a href="https://github.com/eclipse-uprotocol/uprotocol-spec">eclipse-uprotocol/uprotocol-spec</a>:</strong> Protocol specification</li>
+<li><a href="https://github.com/eclipse-uprotocol/uprotocol-core-api">eclipse-uprotocol/uprotocol-core-api</a>: Application layer interfaces for uSubscription, uDiscovery, uTwin</li>
+<li><strong><a href="https://github.com/eclipse-uprotocol/uprotocol-sdk-java">eclipse-uprotocol/uprotocol-sdk-java</a>:</strong> Java Software development Kit (implements uP-L2 and includes other helper code for the protocol)</li>
+<li><strong><a href="https://github.com/eclipse-uprotocol/uprotocol-sdk-cpp">eclipse-uprotocol/uprotocol-sdk-cpp</a>:</strong> Same as Java SDK but for C++</li>
+<li><strong><a href="https://github.com/eclipse-uprotocol/uprotocol-android">eclipse-uprotocol/uprotocol-android</a>:</strong> Android implementation of uProtocol, both the transport protocol (Binder) and core dispatchers and application logic </li>
+</ol></div></div></div><div class="field field-name-field-state field-type-list-text field-label-above"><div class="field-label">State:&nbsp;</div><div class="field-items"><div class="field-item even">Incubating</div></div></div><div class="field field-name-field-working-group field-type-taxonomy-term-reference field-label-above"><div class="field-label">Industry Collaborations:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="/working-group/eclipse-software-defined-vehicle" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Eclipse Software Defined Vehicle</a></div></div></div><div class="field field-name-field-simultaneous-releases field-type-text field-label-hidden">
+         <div class="field-items">
+           <div class="field-item"></div>
+         </div>
+       </div><div class="field field-name-field-project-licenses field-type-node-reference field-label-above"><div class="field-label">Licenses:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="/license/Apache-2.0" class="node-reference-hierarchy-0">Apache License, Version 2.0</a></div></div></div><p class="small">The content of this open source project is received and distributed under the license(s) listed above. Some source code and binaries may be distributed under different terms. Specific license information is provided in file headers and in NOTICE files distributed with the project's binaries.</p><div class="field field-name-field-active-member-companies field-type- field-label-above"><div class="field-label">Active Member Companies:&nbsp;</div><div class="field-items"><div class="field-item even">Member companies supporting this project over the last three months.</div><div class="field-item odd"><ul class="eclipsefdn-participating-organizations list-inline margin-top-10 margin-bottom-10" data-project-short-id="automotive.uprotocol"></div></div></div><div class="field field-name-field-commit-activity field-type-chart-js field-label-above"><div class="field-label">Contribution Activity:&nbsp;</div><div class="field-items"><div class="field-item even">Commits on this project (last 12 months).</div><div class="field-item odd"><div id="chart65516bccd22aa"></div></div></div></div>    </article>
+  </div>
+
+</section> <!-- /.block -->
+  </div>
+                  </div>
+
+        
+              </section>
+
+      
+              <aside id="main-sidebar-secondy" role="complementary" class="col-md-6 col-sm-8">
+            <div class="region region-sidebar-second solstice-region-element-count-4">
+    <section id="block-project-blocks-dynamic-project-links" class="block block-project-blocks block-region-sidebar-second block-solstice-collapse solstice-block solstice-block-default solstice-block-white-bg block-dynamic-project-links solstice-block-white-bg clearfix">
+
+        <h2 class="block-title">Project Links</h2>
+    
+  <div class="block-content">
+    <ul class="list-unstyled nav"><li class="0 first last"><a href="https://youtu.be/8oV7XoJ15uc"><i class="fa fa-arrow-circle-right"></i> Introducing Eclipse uProtocol</a></li>
+</ul>  </div>
+
+</section> <!-- /.block -->
+<section id="block-project-blocks-projects-image" class="block block-project-blocks block-region-sidebar-second block-solstice-collapse solstice-block solstice-block-default solstice-block-white-bg block-projects-image solstice-block-white-bg clearfix">
+
+      
+  <div class="block-content">
+    <a href="https://www.eclipse.org/projects/what-is-incubation.php"><img class="project-image center-block margin-bottom-20 img-responsive" typeof="foaf:Image" src="https://projects.eclipse.org/sites/default/files/uprotocol_img.png" alt="Incubating - Eclipse uProtocol" /></a>  </div>
+
+</section> <!-- /.block -->
+<section id="block-project-blocks-related-projects" class="block block-project-blocks block-region-sidebar-second block-solstice-collapse solstice-block solstice-block-default solstice-block-white-bg block-related-projects solstice-block-white-bg clearfix">
+
+        <h2 class="block-title">Related Projects</h2>
+    
+  <div class="block-content">
+    <h3 class="h5">Project Hierarchy:</h3><ul class="related-projects-block-content-hierarchy-list"><li class="ellipsis hierarchy-1"><a href="/projects/automotive" class="node-reference-hierarchy-0">Eclipse Automotive</a></li>
+<li class="ellipsis hierarchy-2"><a href="/projects/automotive.uprotocol" class="node-reference-hierarchy-1 active">Eclipse uProtocol</a></li>
+</ul>  </div>
+
+</section> <!-- /.block -->
+<section id="block-project-blocks-project-tags" class="block block-project-blocks block-region-sidebar-second block-solstice-collapse solstice-block solstice-block-default solstice-block-white-bg block-project-tags solstice-block-white-bg clearfix">
+
+        <h2 class="block-title"><i class="fa fa-tags"></i> Tags</h2>
+    
+  <div class="block-content">
+    <h5>Technology Types</h5><ul class="list-inline solstice-tags"><li class="0 first last"><a href="/technology-type/automotive">Automotive</a></li>
+</ul><h5>Build Technologies</h5><ul class="list-inline solstice-tags"><li class="0 first last"><a href="/build-technology/maven">Maven</a></li>
+</ul><h5>Other Tags</h5><ul class="list-inline solstice-tags"><li class="0 first last"><a href="/free-tags/automotive">automotive</a></li>
+</ul>  </div>
+
+</section> <!-- /.block -->
+  </div>
+        </aside><!-- /#sidebar-second -->
+          </div>
+  </div>
+
+  </main>
+
+  <div class="eclipsefdn-featured-story featured-footer" data-publish-target="eclipse_org"><div class="container featured-container"></div></div><footer role="contentinfo" id="solstice-footer">
+  <div class="container">
+    <div class="row">
+
+      <section id="footer-eclipse-foundation" class="col-xs-offset-1 col-xs-11 col-sm-7 col-md-6 col-md-offset-0 hidden-print">
+                      <h2 class="section-title">Eclipse Foundation</h2>
+    <ul class="nav"><li><a href="https://www.eclipse.org/org/">About Us</a></li><li><a href="https://www.eclipse.org/org/foundation/contact.php">Contact Us</a></li><li><a href="https://www.eclipse.org/sponsor">Sponsor</a></li><li><a href="https://www.eclipse.org/membership/">Members</a></li><li><a href="https://www.eclipse.org/org/documents/">Governance</a></li><li><a href="https://www.eclipse.org/org/documents/Community_Code_of_Conduct.php">Code of Conduct</a></li><li><a href="https://www.eclipse.org/artwork/">Logo and Artwork</a></li><li><a href="https://www.eclipse.org/org/foundation/directors.php">Board of Directors</a></li><li><a href="https://www.eclipse.org/careers">Careers</a></li></ul>              </section>
+
+      <section id="footer-legal" class="col-xs-offset-1 col-xs-11 col-sm-7 col-md-6 col-md-offset-0 hidden-print">
+                      <h2 class="section-title">Legal</h2>
+    <ul class="nav"><li><a href="https://www.eclipse.org/legal/privacy.php">Privacy Policy</a></li><li><a href="https://www.eclipse.org/legal/termsofuse.php">Terms of Use</a></li><li><a href="https://www.eclipse.org/legal/copyright.php">Copyright Agent</a></li><li><a href="https://www.eclipse.org/legal/epl-2.0/">Eclipse Public License</a></li><li><a href="https://www.eclipse.org/legal/">Legal Resources</a></li></ul>              </section>
+
+      <section id="footer-useful-links" class="col-xs-offset-1 col-xs-11 col-sm-7 col-md-6 col-md-offset-0 hidden-print">
+                      <h2 class="section-title">Useful Links</h2>
+    <ul class="nav"><li><a href="https://bugs.eclipse.org/bugs/">Report a Bug</a></li><li><a href="//help.eclipse.org/">Documentation</a></li><li><a href="https://www.eclipse.org/contribute/">How to Contribute</a></li><li><a href="https://www.eclipse.org/mail/">Mailing Lists</a></li><li><a href="https://www.eclipse.org/forums/">Forums</a></li><li><a href="//marketplace.eclipse.org">Marketplace</a></li></ul>              </section>
+
+      <section id="footer-other" class="col-xs-offset-1 col-xs-11 col-sm-7 col-md-6 col-md-offset-0 hidden-print">
+                      <h2 class="section-title">Other</h2>
+    <ul class="nav"><li><a href="https://www.eclipse.org/ide/">IDE and Tools</a></li><li><a href="https://www.eclipse.org/projects">Projects</a></li><li><a href="https://www.eclipse.org/org/workinggroups/">Working Groups</a></li><li><a href="https://www.eclipse.org/org/research/">Research@Eclipse</a></li><li><a href="https://www.eclipse.org/security/">Report a Vulnerability</a></li><li><a href="https://status.eclipse.org">Service Status</a></li></ul>              </section>
+
+            <div class="col-sm-24 margin-top-20">
+        <div class="row">
+          <div id="copyright" class="col-md-16">
+            <p id="copyright-text">Copyright &copy; Eclipse Foundation. All Rights Reserved.</p>
+          </div>
+          <div class="col-md-8 social-media">
+            <ul class="list-inline">
+              <li>
+                <a class="social-media-link fa-stack fa-lg" href="https://twitter.com/EclipseFdn" aria-label="Eclipse Foundation Twitter profile">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x"></i>
+                </a>
+              </li>
+              <li>
+                <a class="social-media-link fa-stack fa-lg" href="https://www.facebook.com/eclipse.org" aria-label="Eclipse Foundation Facebook page">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x"></i>
+                </a>
+              </li>
+              <li>
+                <a class="social-media-link fa-stack fa-lg" href="https://www.youtube.com/user/EclipseFdn" aria-label="Eclipse Foundation YouTube channel">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-youtube fa-stack-1x"></i>
+                </a>
+              </li>
+              <li>
+                <a class="social-media-link fa-stack fa-lg" href="https://www.linkedin.com/company/eclipse-foundation" aria-label="Eclipse Foundation Linkedin profile">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>      <a href="#" class="scrollup">Back to the top</a>
+    </div>
+  </div>
+</footer>
+  <script src="https://projects.eclipse.org/sites/default/files/js/js_Zm_xCP5jx3CmJWW2MFU7XOgTN-yIVxUGHBPxE-7Euo8.js"></script>
+</body>
+</html>

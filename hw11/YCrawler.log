@@ -49,3 +49,26 @@ Downloading top 30 stories (iteration 0)
 Запрос превысил лимит времени ожидания для: https://linuximpact.com/play-the-first-ever-text-adventure-game-in-your-linux-terminal/
 Downloading took 32.415 seconds
 Waiting 30 sec...
+Ycrawler запущен с опциями: PERIOD=30, LIMIT=30, PATH=./YCrawler_data, CONNECTIONS_LIMIT=3, LOG_FILE=YCrawler.log
+Downloading top 30 stories (iteration 0)
+Задача была отменена: https://www.freecodecamp.org/news/lightweight-linux-distributions-for-your-pc/
+Задача была отменена: https://hacker-news.firebaseio.com/v0/item/38229231.json
+Задача была отменена: https://lewiscampbell.tech/blog/231112.html
+Задача была отменена: https://hacker-news.firebaseio.com/v0/item/38240689.json
+Задача была отменена: https://github.com/KillianLucas/open-interpreter
+Задача была отменена: https://hacker-news.firebaseio.com/v0/item/38239358.json
+Задача была отменена: https://hacker-news.firebaseio.com/v0/item/38239542.json
+Задача была отменена: https://hacker-news.firebaseio.com/v0/item/38232767.json
+Задача была отменена: https://reddit.com/r/AskElectronics/comments/qxpfxl/how_to_attach_logic_probes_to_tiny_smd_components/
+Задача была отменена: https://hacker-news.firebaseio.com/v0/item/38239735.json
+Задача была отменена: https://twitter.com/abidlabs/status/1723074108739706959
+Задача была отменена: https://en.wikipedia.org/wiki/Geohash
+Задача была отменена: https://hacker-news.firebaseio.com/v0/item/38229998.json
+Задача была отменена: https://pnote.eu/projects/invaders/map.html
+Задача была отменена: https://www.mattblaze.org/photos/locks.html
+Задача была отменена: http://dejanews.com/
+Задача была отменена: https://github.com/AsahiLinux/docs/wiki/SW:Speakers
+Задача была отменена: https://hacker-news.firebaseio.com/v0/item/38240861.json
+Задача была отменена: https://hacker-news.firebaseio.com/v0/item/38242105.json
+Задача была отменена: https://hacker-news.firebaseio.com/v0/item/38242086.json
+Задача была отменена: https://hacker-news.firebaseio.com/v0/item/38239266.json

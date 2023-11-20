@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Free Oberon</title>
+<link rel="stylesheet" type="text/css" href="/assets/css/styles.css?v=0.0010" />
+<link rel="icon" type="image/png" href="/images/icon.png" />
+</head>
+<body>
+
+<div id="wrap" style="min-height:101vh">
+  <script>
+  function rsz() {
+    var W = document.getElementById('wrap');
+    if (W) {
+      var w = document.body.clientWidth;
+      W.style.width = Math.round(w / 2 - 1) * 2 + 'px';
+    }
+  }
+  function lod() {
+    document.getElementById('wrap').style = '';
+    rsz();
+  }
+  window.addEventListener('resize', rsz);
+  window.addEventListener('load', lod);
+  rsz();
+  </script>
+
+  <header class="header">
+    <div class="header-inner">
+      <a class="logo" href="/en/">
+        Free Oberon
+      </a>
+      <nav class="nav">
+        <div class="menu">
+          <a class="btn" href="/en/">About</a>
+          <a class="btn" href="/en/download/">Download</a>
+          <a class="btn" href="/docs/en/">Documentation</a>
+          <a class="btn" href="/en/lessons/">Lessons</a>
+        </div>
+
+        <div class="lang">
+          <a class="btn" href="/">РУ</a>
+          <a class="btn cur" href="/en/">EN</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page">
+
+<section class="section entry">
+
+  <div style="text-align:center;max-width:220px;float:right;padding:8px">
+    <a class="btn" id="dlBtn" href="/en/download">DOWNLOAD FREE OBERON</a>
+    <br><br>
+    for: <a id="dlWin" href="/files/FreeOberon_1.1.0-alpha.7.7z">WINDOWS</a> /
+    <a id="dlLin" href="/files/FreeOberon_1.1.0-alpha.7.tar.gz">LINUX</a>
+    <script>
+    document.getElementById('dlBtn').href = navigator.appVersion.includes('Windows') ?
+      document.getElementById('dlWin').href : document.getElementById('dlLin').href;
+    </script>
+  </div>
+
+  <h2 class="section-title">
+    Updates
+  </h2>
+  <ul class="btn-list">
+    <li>
+      November 8, 2023. A new edition of
+         <a href="/files/FreeOberon_v1.1.0_en.pdf">Documentation on Using the Free Oberon IDE and the Programming Language Oberon</a>
+         (<a href="/files/FreeOberon_v1.1.0_en.odt">ODT</a>).
+    </li>
+    <li>
+      January 26, 2023. New <a href="/en/docs/">module documentation</a> has been published.
+    </li>
+    <li>
+      January 11, 2023. New
+         <a href="/en/download">Free Oberon 1.1.0-alpha.7</a>
+         version is out.<br>
+          * Debug output and "--debug" key<br>
+          * Unicode support in modules In and Out on Windows<br>
+          * Automatic linking of external libraries<br>
+          * OS clipboard integration<br>
+          * Fix paste of large text<br>
+          * Fix compilation outside FreeOberon directory on Windows<br>
+          * Fix parser in project builder
+    </li>
+    <li>
+      January 9, 2023. <a href="/en/lessons/sort/heapsort/">A lesson on Heapsort</a> has been published.
+    </li>
+    <li>
+      <a href="/en/archive/">News Archive</a>
+    </li>
+  </ul>
+
+  <h2 class="section-title" style="padding-bottom:1em">
+    Video (voice is in Russian, with English subtitles)
+  </h2>
+
+  <div class="video-wrap">
+    <div class="video">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/6vTL2U3i_60?controls=1&amp;iv_load_policy=3&amp;showinfo=0&amp;modestbranding=1&amp;rel=0&amp;cc_lang_pref=en&amp;cc_load_policy=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+  <!-- <a href="https://www.youtube.com/watch?v=5QLMtKvEOhA" target="_blank">Video: Part two</a> -->
+  <style>
+  .video-wrap {
+    max-width: 1110px;
+    margin: 0 auto 2em;
+  }
+  .video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+  }
+  .video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  </style>
+
+  <h2 class="section-title">
+    What is Free Oberon?
+  </h2>
+  <p>
+    Free Oberon is a cross-platform integrated development environment for development in
+       Oberon programming language, made in the classical pseudo-graphic style.
+  </p>
+  <p>
+    Compilation is done using the
+       <a target="_blank" href="https://github.com/Oleg-N-Cher/OfrontPlus">Ofront+ Oberon translator</a>,
+       the compiled console programs are executed independently or in the built-in cross-platform terminal
+       emulator. Free Oberon uses the latest revision of the Oberon programing language (Oberon-07).
+       The size of type CHAR is 2 bytes and it supports Unicode. The base modules were rewritten with
+       this in mind: In, Out, Files, Texts, etc. The language extensions include pointers to arrays.
+  </p>
+  <p>
+    The IDE includes a cross-platform module Graph for graphics programming.
+       It is built on top of Allegro5 library.
+  </p>
+  <p>
+    The interface of the IDE as well as the compiler error messages are translated
+       in other languages. Anyone can add a language by editing a text file.
+  </p>
+  <p>
+    Free Oberon is free software and is shipped under
+       <a target="_blank" href="https://www.gnu.org/licenses/gpl.txt">GNU General Public License version 3</a>
+       with source code. It can be compiled under Windows, GNU/Linux and other operating systems.
+       Windows version contains a precompiled Ofront+ compiler, and truncated MinGW bundle,
+       necessary for its operation. The compiled programs are &ldquo;native&rdquo; Windows applications
+       and do not require additional DLL files to work.
+  </p>
+  <p>
+    Free Oberon is part of a larger project, which includes writing a series of textbooks on
+       programming, creating educational materials, and the development of a native Oberon compiler and other
+       programs with the aim of developing informatics as science and popularizing it as science among
+       programmers and students.
+  </p>
+  <p style="text-indent:0;text-align:center;margin:20px 0">
+    <img src="/images/screenshot.png" width="648" height="539" alt="Free Oberon, version 0.1.0" />
+  </p>
+
+  <h2 id="installation">Installation</h2>
+  <ol>
+    <li>
+      To install on Windows, unpack the ZIP archive and run FreeOberon.exe.</li>
+    <li>
+      To install on Linux (Ubuntu, Debian, Mint), download ZIP-archive from GitHub
+         or clone the <a target="_blank" href="https://github.com/kekcleader/FreeOberon">repository</a>
+         and run install.sh with root privileges.
+         Learn more in
+         <a target="_blank" href="https://github.com/kekcleader/FreeOberon/blob/main/README.md">README</a>.
+    </li>
+  </ol>
+
+  <p style="text-indent:0;text-align:center;margin:20px 0">
+    <img src="/images/life.gif" width="800" height="300" alt="Game of Life with colors made in Free Oberon" />
+    <br>
+    Game of Life with colors made in Free Oberon
+  </p>
+
+  <h2 class="section-title">
+    Additional Information
+  </h2>
+  <p>
+    The source code of the user programs are stored in the Programs directory, and the executable
+       files are stored in the bin directory. To compile, a script file is used: data\bin\compile.bat
+       (on Linux: data/bin/compile.sh), which you can edit if you like.
+  </p>
+  <p>
+    Please read the <a target="_blank" href="/files/FreeOberon_v1.0.0_en.pdf">documentation</a>
+       to get used to the interface of Free Oberon more quickly.
+       The editor can be switched to windowed mode, using the combination of keys [Alt+Enter],
+       copy and paste can be done using [Ctrl+C] and [Ctrl+V]. The program trapped in a livelock
+       can be stopped by pressing the [Ctrl+Break] key combination. Among others, the following
+       modules are available: In, Out, Strings, Files, Math, Graph. </p>
+
+  <h2 class="section-title">Feedback</h2>
+  <p>
+    Please write your questions and wishes to
+    <a href="mailto:freeoberon@yandex.com">freeoberon@yandex.com</a>
+  </p>
+
+</section>
+
+  </div>
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="write-at">
+        Write to
+        <a href="mailto:freeoberon@yandex.com">freeoberon@yandex.com</a>
+      </p>
+      <p class="updated-on">
+        Last updated on January&nbsp;26, 2023
+      </p>
+      <div class="counter">
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+        ym(70227478,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/70227478" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+      </div>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
