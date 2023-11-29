@@ -1,0 +1,35 @@
+name: hw09
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Run server and test with Apache Benchmark
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Build Docker container
+      run: docker build . -t hw09
+      working-directory: hw09
+
+    - name: Run Docker container with server
+      run: docker run -d --name hw09_container -p 11211:11211 hw09
+      working-directory: hw09
+
+    - name: Test with unit test
+      run: docker exec hw09_container python3 memc_load_multi.py
+      working-directory: hw09
+
+    - name: Stop Docker container
+      run: docker stop hw09_container
+      working-directory: hw09
