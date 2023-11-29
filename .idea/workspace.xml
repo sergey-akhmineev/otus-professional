@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ab944d6-57e1-4c83-84d7-2b86e9cdd8d0" name="Changes" comment="Обновил">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/hw09.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw09/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw09/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw09/appsinstalled.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw09/appsinstalled_pb2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw09/memc_connection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw09/memc_load.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw09/memc_load_multi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw09/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw09/source_data/sample.tsv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="3ab944d6-57e1-4c83-84d7-2b86e9cdd8d0" name="Changes" comment="Добавил 9ю домашку">
+      <change beforePath="$PROJECT_DIR$/hw09/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/hw09/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -534,7 +524,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701263237757</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Добавил 9ю домашку">
+      <option name="closed" value="true" />
+      <created>1701264893539</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1701264893539</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -556,6 +554,7 @@
     <MESSAGE value="Добавил ДЗ" />
     <MESSAGE value="убрал CMD чтобы можно было выполнять все в контейнере" />
     <MESSAGE value="Обновил" />
-    <option name="LAST_COMMIT_MESSAGE" value="Обновил" />
+    <MESSAGE value="Добавил 9ю домашку" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил 9ю домашку" />
   </component>
 </project>
