@@ -4,8 +4,6 @@ WORKDIR /app
 
 COPY . .
 
-COPY appsinstalled/ appsinstalled/
-
 RUN go mod init memc_load_parallel && \
     go mod tidy && \
     go mod download
