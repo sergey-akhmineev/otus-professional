@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ab944d6-57e1-4c83-84d7-2b86e9cdd8d0" name="Changes" comment="Обновил 7ю">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/hw12.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw12/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw12/appsinstalled/appsinstalled.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw12/appsinstalled/appsinstalled.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw12/memc_load_parallel.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="3ab944d6-57e1-4c83-84d7-2b86e9cdd8d0" name="Changes" comment="Обновление">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw12/appsinstalled/appsinstalled.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/hw12/appsinstalled.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw12/appsinstalled/appsinstalled.proto" beforeDir="false" afterPath="$PROJECT_DIR$/hw12/appsinstalled.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +56,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dokxu\OneDrive\Документы\GitHub\otus-professional\hw12" />
       <recent name="C:\Users\dokxu\OneDrive\Документы\GitHub\otus-professional\hw07\dmia\classifiers" />
       <recent name="C:\Users\dokxu\OneDrive\Документы\GitHub\otus-professional\hw07\dmia" />
       <recent name="C:\Users\dokxu\OneDrive\Документы\GitHub\otus-professional\hw07" />
@@ -449,22 +446,6 @@
       <option name="project" value="LOCAL" />
       <updated>1697615410627</updated>
     </task>
-    <task id="LOCAL-00041" summary="Корректировка">
-      <option name="closed" value="true" />
-      <created>1699589962701</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1699589962701</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Корректировка">
-      <option name="closed" value="true" />
-      <created>1699590225207</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1699590225207</updated>
-    </task>
     <task id="LOCAL-00043" summary="Финишный пуш">
       <option name="closed" value="true" />
       <created>1699590761981</created>
@@ -545,7 +526,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701309815012</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Добавил memc на GO">
+      <option name="closed" value="true" />
+      <created>1701323460203</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1701323460203</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Обновление">
+      <option name="closed" value="true" />
+      <created>1701323666400</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1701323666400</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -569,6 +566,8 @@
     <MESSAGE value="Обновил" />
     <MESSAGE value="Добавил 9ю домашку" />
     <MESSAGE value="Обновил 7ю" />
-    <option name="LAST_COMMIT_MESSAGE" value="Обновил 7ю" />
+    <MESSAGE value="Добавил memc на GO" />
+    <MESSAGE value="Обновление" />
+    <option name="LAST_COMMIT_MESSAGE" value="Обновление" />
   </component>
 </project>
