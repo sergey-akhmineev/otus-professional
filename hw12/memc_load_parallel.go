@@ -1,7 +1,6 @@
 package main
 
 import (
-	"appsinstalled"
 	"bufio"
 	"compress/gzip"
 	"errors"
