@@ -2,13 +2,13 @@ FROM golang:latest AS builder
 
 WORKDIR /app
 
-COPY go.mod go.sum ./
-
-RUN go mod download
-
 COPY . .
 
 COPY appsinstalled/ appsinstalled/
+
+RUN go mod init memc_load_parallel && \
+    go mod tidy && \
+    go mod download
 
 RUN CGO_ENABLED=0 GOOS=linux go build -o memc_load_parallel .
 
