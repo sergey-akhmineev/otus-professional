@@ -60,7 +60,6 @@ func InsertAppsinstalled(appsinstld_lines <-chan *AppsInstalled, res_chain chan<
 
 	for appsinstld := range appsinstld_lines {
 
-		ua := &appsinstalled.UserApps{}
 		ua.Lat = proto.Float64(appsinstld.lat)
 		ua.Lon = proto.Float64(appsinstld.lon)
 		ua.Apps = appsinstld.apps
