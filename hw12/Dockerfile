@@ -8,7 +8,7 @@ RUN go mod init memc_load_parallel && \
     go mod tidy && \
     go mod download
 
-RUN CGO_ENABLED=0 GOOS=linux go build -o memc_load_parallel .
+RUN CGO_ENABLED=0 GOOS=linux go build -o memc_load_parallel memc_load_parallel.go
 
 FROM alpine:latest
 
