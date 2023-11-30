@@ -3,7 +3,7 @@ from scipy import sparse
 
 
 class LogisticRegression:
-    def init(self):
+    def __init__(self):
         # Инициализация весов модели и истории ошибок
         self.w = None
         self.loss_history = None

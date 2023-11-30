@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ab944d6-57e1-4c83-84d7-2b86e9cdd8d0" name="Changes" comment="Добавил 9ю домашку">
-      <change beforePath="$PROJECT_DIR$/hw09/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/hw09/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw07/.ipynb_checkpoints/homework-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw07/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw07/dmia/classifiers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw07/dmia/classifiers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw07/dmia/classifiers/logistic_regression.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw07/dmia/classifiers/logistic_regression.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw07/homework.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/hw07/homework.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Python Script" />
         <option value="Dockerfile" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -52,6 +57,13 @@
     &quot;settings.editor.splitter.proportion&quot;: &quot;0.14967743&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dokxu\OneDrive\Документы\GitHub\otus-professional\hw07\dmia\classifiers" />
+      <recent name="C:\Users\dokxu\OneDrive\Документы\GitHub\otus-professional\hw07\dmia" />
+      <recent name="C:\Users\dokxu\OneDrive\Документы\GitHub\otus-professional\hw07" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.utils">
     <configuration name="YCrawler" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="otus-professional" />
@@ -436,22 +448,6 @@
       <option name="project" value="LOCAL" />
       <updated>1697615410627</updated>
     </task>
-    <task id="LOCAL-00038" summary="Корректировка">
-      <option name="closed" value="true" />
-      <created>1699589407839</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1699589407839</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Корректировка">
-      <option name="closed" value="true" />
-      <created>1699589649546</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1699589649546</updated>
-    </task>
     <task id="LOCAL-00040" summary="Корректировка">
       <option name="closed" value="true" />
       <created>1699589837309</created>
@@ -532,7 +528,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701264893539</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Добавил 9ю домашку">
+      <option name="closed" value="true" />
+      <created>1701265040867</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1701265040868</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Добавил 9ю домашку">
+      <option name="closed" value="true" />
+      <created>1701267165611</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1701267165611</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
