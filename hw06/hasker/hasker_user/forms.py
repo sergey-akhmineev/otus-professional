@@ -27,9 +27,12 @@ class SignUpForm(forms.Form):
 
 
 class LoginForm(forms.Form):
-    username = forms.CharField(max_length=USERNAME_MAX_LEN)
-    password = forms.CharField(max_length=PASSWORD_MAX_LEN,
-                               widget=forms.PasswordInput)
+    username = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput)
+
+    def __init__(self, *args, **kwargs):
+        self.request = kwargs.pop('request', None)
+        super(LoginForm, self).__init__(*args, **kwargs)
 
 
 class UserSettingsForm(forms.Form):

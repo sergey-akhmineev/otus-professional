@@ -1,92 +1,94 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
-from django.contrib.auth import authenticate, login, logout, get_user_model
-from django.http import HttpResponseRedirect
-from django.shortcuts import render, reverse
-from django.views.decorators.http import require_http_methods
+from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth import authenticate, login, get_user_model
+from django.urls import reverse_lazy
+from django.views.generic import FormView, RedirectView
+from django.shortcuts import redirect
 
 from .forms import LoginForm, UserSettingsForm, SignUpForm
-
 
 User = get_user_model()
 
 
-@require_http_methods(['POST', 'GET'])
-def login_view(request):
-    if request.method == 'POST':
-        login_form = LoginForm(request.POST)
-        if login_form.is_valid():
-            cd = login_form.cleaned_data
-            user = authenticate(request, username=cd['username'],
-                                password=cd['password'])
-            if user:
-                login(request, user)
-                return HttpResponseRedirect(reverse('askme:index'))
-            else:
-                login_form.errors['password'] = ['Incorrect password']
-    else:
-        if request.user.is_authenticated:
-            logout(request)
-        login_form = LoginForm()
-    return render(request, 'hasker_user/login.html', {
-        'form': login_form,
-        'user': request.user
-    })
+class CustomLoginView(LoginView):
+    form_class = LoginForm
+    template_name = 'hasker_user/login.html'
+    redirect_authenticated_user = True
+
+    def form_valid(self, form):
+        username = form.cleaned_data['username']
+        password = form.cleaned_data['password']
+        user = authenticate(self.request, username=username, password=password)
+        if user is not None:
+            login(self.request, user)
+            return redirect(self.get_success_url())
+        else:
+            form.add_error('password', 'Incorrect password')
+            return self.form_invalid(form)
+
+    def get_success_url(self):
+        return reverse_lazy('askme:index')
 
 
-def logout_view(request):
-    logout(request)
-    return HttpResponseRedirect(reverse('askme:index'))
+class CustomLogoutView(LogoutView):
+    next_page = 'askme:index'
 
 
-@require_http_methods(['POST', 'GET'])
-def settings(request):
-    if not request.user.is_authenticated:
-        return HttpResponseRedirect(reverse('askme:index'))
+class CustomSettingsView(FormView):
+    form_class = UserSettingsForm
+    template_name = 'hasker_user/user_settings.html'
+    success_url = reverse_lazy('askme:index')
 
-    user = request.user
-    if request.method == 'POST':
-        form = UserSettingsForm(request.POST, request.FILES)
-        if form.is_valid():
-            cd = form.cleaned_data
-            user.email = cd['email']
-            if cd['photo']:
-                user.photo = cd['photo']
-            user.save()
-            return HttpResponseRedirect(reverse('askme:index'))
-    else:
-        form = UserSettingsForm({
-            'username': user.username,
-            'email': user.email
-        })
+    def get_form_kwargs(self):
+        kwargs = super(CustomSettingsView, self).get_form_kwargs()
+        if self.request.method == 'GET':
+            kwargs.update({'initial': {
+                'email': self.request.user.email,
+            }})
+        return kwargs
 
-    return render(request, 'hasker_user/user_settings.html', {
-        'form': form,
-        'photo_url': user.photo_url()
-    })
+    def form_valid(self, form):
+        user = self.request.user
+        user.email = form.cleaned_data['email']
+        if form.cleaned_data['photo']:
+            user.photo = form.cleaned_data['photo']
+        user.save()
+        return super(CustomSettingsView, self).form_valid(form)
+
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return redirect('askme:index')
+        return super(CustomSettingsView, self).dispatch(request, *args, **kwargs)
 
 
-@require_http_methods(['POST', 'GET'])
-def signup(request):
-    if request.method == 'POST':
-        form = SignUpForm(request.POST, request.FILES)
-        if form.is_valid():
-            cd = form.cleaned_data
-            if User.objects.filter(username=cd['username']).exists():
-                form.errors['username'] = ['Username already exists']
-            elif User.objects.filter(email=cd['email']).exists():
-                form.errors['email'] = ['Email already exists']
-            else:
-                User.objects.create_user(username=cd['username'],
-                                         email=cd['email'],
-                                         password=cd['password'],
-                                         photo=cd['photo'])
-                user = authenticate(request, username=cd['username'],
-                                    password=cd['password'])
-                if user is not None:
-                    login(request, user)
-                return HttpResponseRedirect(reverse('askme:index'))
-    else:
-        form = SignUpForm()
-    return render(request, 'hasker_user/signup.html', {'form': form})
+class CustomSignupView(FormView):
+    form_class = SignUpForm
+    template_name = 'hasker_user/signup.html'
+    success_url = reverse_lazy('askme:index')
+
+    def form_valid(self, form):
+        username = form.cleaned_data['username']
+        email = form.cleaned_data['email']
+        password = form.cleaned_data['password']
+        photo = form.cleaned_data['photo']
+
+        if User.objects.filter(username=username).exists():
+            form.add_error('username', 'Username already exists')
+            return self.form_invalid(form)
+        if User.objects.filter(email=email).exists():
+            form.add_error('email', 'Email already exists')
+            return self.form_invalid(form)
+
+        user = User.objects.create_user(
+            username=username,
+            email=email,
+            password=password,
+            photo=photo
+        )
+        user.backend = 'django.contrib.auth.backends.ModelBackend'
+        login(self.request, user)
+
+        return redirect(self.get_success_url())
+
+    def form_invalid(self, form):
+        return super(CustomSignupView, self).form_invalid(form)

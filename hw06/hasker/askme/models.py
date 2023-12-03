@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db import models
+
 from django.conf import settings
 from django.db import models, transaction
 from django.contrib.auth import get_user_model
 from django.utils.text import slugify
-from django.forms import ModelForm
 
 
 User = get_user_model()
@@ -15,28 +14,27 @@ User = get_user_model()
 class Tag(models.Model):
     name = models.CharField(max_length=20, unique=True)
 
+    def __str__(self):
+        return self.name
 
 class Question(models.Model):
     title = models.CharField(max_length=200)
     text = models.TextField()
     date_pub = models.DateField(auto_now_add=True)
-    slug = models.SlugField(unique=True)
-    user = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE)
-    tags = models.ManyToManyField(Tag)
+    slug = models.SlugField(unique=True, editable=False)  # Делаем поле нередактируемым
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    tags = models.ManyToManyField(Tag, blank=True)
     votes = models.IntegerField(default=0)
-    correct_answer = models.ForeignKey(
-        'Answer',
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
-        related_name='correct_answer',
-    )
+    correct_answer = models.ForeignKey('Answer', on_delete=models.SET_NULL,
+                                       null=True, blank=True, related_name='correct_answer')
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
+        if not self.id:  # Генерируем slug только для новых записей
+            self.slug = slugify(self.title)
         super(Question, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return self.title
 
     @transaction.atomic
     def vote_up(self, user_id):

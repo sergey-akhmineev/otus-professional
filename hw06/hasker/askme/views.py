@@ -1,199 +1,181 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
 from django.db.models import Q
+from django.views.generic import ListView, DetailView, CreateView, RedirectView, View
+from django.urls import reverse_lazy
 from django.db import transaction
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadRequest
-from django.urls import reverse
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404, redirect
+from django.http import HttpResponse, HttpResponseBadRequest
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from django.views.decorators.http import require_POST, require_safe, require_http_methods
-from django.contrib.auth import get_user_model
-from django.contrib.postgres.search import SearchVector
 
 from .forms import QuestionForm
 from .models import Question, Tag, Answer
 
 
-User = get_user_model()
+class QuestionVoteUpView(LoginRequiredMixin, View):
+    def post(self, request, *args, **kwargs):
+        question = get_object_or_404(Question, pk=kwargs['question_id'])
+        question.vote_up(request.user.id)
+        return JsonResponse({'votes': question.votes})
 
 
-@require_safe
-def question(request, id):
-    question = get_object_or_404(Question, pk=id)
-    answer_list = question.answer_set.all().order_by('-votes')
-    page = request.GET.get('page')
-    answers = paginate(answer_list, page, 30)
-    return render(request, 'askme/question_detail.html', {
-        'question': question,
-        'answers': answers
-    })
-
-@require_safe
-def index(request):
-    questions_list = Question.objects.all().order_by('-date_pub', '-votes')
-    page = request.GET.get('page')
-    questions = paginate(questions_list, page)
-    return render(request, 'askme/index.html', {
-        'questions': questions
-    })
+class QuestionVoteDownView(LoginRequiredMixin, View):
+    def post(self, request, *args, **kwargs):
+        question = get_object_or_404(Question, pk=kwargs['question_id'])
+        question.vote_down(request.user.id)
+        return JsonResponse({'votes': question.votes})
 
 
-def ask(request):
-    if request.method == 'POST':
-        form = QuestionForm(request.POST)
-        if form.is_valid():
-            cd = form.cleaned_data
-            quest_params = {
-                'title': cd['title'],
-                'text': cd['text'],
-                'user_id': request.user.pk
-            }
-            with transaction.atomic():
-                question = Question.objects.create(**quest_params)
-                if cd.get('tags'):
-                    tag_names = cd['tags']
-                    tags = []
-                    for tag_name in tag_names:
-                        tag, _ = Tag.objects.get_or_create(name=tag_name)
-                        tags.append(tag)
-                    question.tags.add(*tags)
-            return HttpResponseRedirect('/')
-    else:
-        # Создаем пустую форму Question и отдаем ее в шаблон
-        form = QuestionForm()
-    return render(request, 'askme/ask.html', {
-        'form': form,
-        'hide_ask_btn': True
-    })
+class AnswerCreateView(LoginRequiredMixin, CreateView):
+    model = Answer
+    fields = ['text']
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        form.instance.question = get_object_or_404(Question, slug=self.kwargs.get('slug'))
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        question_slug = self.kwargs.get('slug')
+        return reverse_lazy('askme:question', kwargs={'slug': question_slug})
 
 
-@require_http_methods('POST, GET')
-def question_detail(request, slug):
-    question = get_object_or_404(Question, slug=slug)
-    if request.method == 'POST':
-        # Добавим ответ к этому вопросу
-        answer_text = request.POST.get('text')
-        if answer_text:
-            if request.user.is_authenticated:
-                question.answer_set.create(text=answer_text, user=request.user)
-                # todo send email to author of question
-                return HttpResponseRedirect(reverse('askme:question', args=(slug,)))
+class QuestionDetailView(DetailView):
+    model = Question
+    template_name = 'askme/question_detail.html'
+    context_object_name = 'question'
 
-    answer_list = question.answer_set.all().order_by('-votes')
-    page = request.GET.get('page')
-    answers = paginate(answer_list, page, 30)
-    return render(request, 'askme/question.html', {
-        'question': question,
-        'answers': answers
-    })
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        answer_list = self.object.answer_set.all().order_by('-votes')
+        page = self.request.GET.get('page')
+        context['answers'] = self.paginate_queryset(answer_list, page, 30)
+        return context
 
-@require_http_methods(["GET"])
-def search_tag(request, tag_name):
-    tag = Tag.objects.filter(name=tag_name).first()
-    if tag:
-        questions_list = tag.question_set.all()
-    else:
-        questions_list = []
-    page = request.GET.get('page')
-    questions = paginate(questions_list, page)
-    return render(request, 'askme/search.html', {
-        'questions': questions,
-        'head_title': 'Tag results',
-        'search_query': f'tag:{tag_name}'
-    })
+    def paginate_queryset(self, queryset, page, per_page=20):
+        paginator = Paginator(queryset, per_page)
+        try:
+            paginated_list = paginator.page(page)
+        except PageNotAnInteger:
+            paginated_list = paginator.page(1)
+        except EmptyPage:
+            paginated_list = paginator.page(paginator.num_pages)
+        return paginated_list
 
 
-@require_safe
-def search(request):
-    query = request.GET.get('q') or ''
-    if len(query) > 100:
-        questions_list = []
-    else:
-        questions_list = Question.objects.filter(
+class IndexView(ListView):
+    model = Question
+    template_name = 'askme/index.html'
+    context_object_name = 'questions'
+    paginate_by = 20
+    ordering = ['-date_pub', '-votes']
+
+
+class AskView(LoginRequiredMixin, CreateView):
+    form_class = QuestionForm
+    template_name = 'askme/ask.html'
+    success_url = reverse_lazy('askme:index')
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(AskView, self).form_valid(form)
+
+
+class QuestionBySlugView(DetailView):
+    model = Question
+    template_name = 'askme/question.html'
+    context_object_name = 'question'
+    slug_url_kwarg = 'slug'
+
+    def paginate_queryset(self, queryset, page, per_page=20):
+        paginator = Paginator(queryset, per_page)
+        try:
+            paginated_list = paginator.page(page)
+        except PageNotAnInteger:
+            paginated_list = paginator.page(1)
+        except EmptyPage:
+            paginated_list = paginator.page(paginator.num_pages)
+        return paginated_list
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        answer_list = self.object.answer_set.all().order_by('-votes')
+        page = self.request.GET.get('page')
+        context['answers'] = self.paginate_queryset(answer_list, page, 30)
+        return context
+
+
+class SearchTagView(ListView):
+    template_name = 'askme/search.html'
+    context_object_name = 'questions'
+
+    def get_queryset(self):
+        tag_name = self.kwargs.get('tag_name')
+        tag = Tag.objects.filter(name=tag_name).first()
+        if tag:
+            return tag.question_set.all()
+        return Question.objects.none()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update({
+            'head_title': 'Tag results',
+            'search_query': f'tag:{self.kwargs.get("tag_name")}'
+        })
+        return context
+
+
+class SearchView(ListView):
+    template_name = 'askme/search.html'
+    context_object_name = 'questions'
+
+    def get_queryset(self):
+        query = self.request.GET.get('q', '')
+        if len(query) > 100:
+            return Question.objects.none()
+        return Question.objects.filter(
             Q(title__icontains=query) | Q(text__icontains=query)
         ).order_by('-date_pub', '-votes')
-    page = request.GET.get('page')
-    questions = paginate(questions_list, page)
-    return render(request, 'askme/search.html', {
-        'questions': questions,
-        'head_title': 'Search results'
-    })
 
-def answer_vote(request, answer_id, to_up):
-    if not request.user.is_authenticated:
-        return HttpResponseBadRequest()
-    answer = Answer.objects.filter(pk=answer_id).first()
-    if not answer:
-        return HttpResponseBadRequest()
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['head_title'] = 'Search results'
+        return context
 
-    user_id = request.user.pk
-    if to_up:
+
+class AnswerVoteUpView(LoginRequiredMixin, View):
+
+    def post(self, request, *args, **kwargs):
+        answer_id = kwargs.get('answer_id')
+        answer = get_object_or_404(Answer, pk=answer_id)
+        user_id = request.user.pk
         answer.vote_up(user_id)
-    else:
+        return JsonResponse({'votes': answer.votes})
+
+    def get_redirect_url(self, *args, **kwargs):
+        return reverse_lazy('askme:question', kwargs={'slug': self.kwargs.get('slug')})
+
+
+class AnswerVoteDownView(LoginRequiredMixin, View):
+
+    def post(self, request, *args, **kwargs):
+        answer_id = kwargs.get('answer_id')
+        answer = get_object_or_404(Answer, pk=answer_id)
+        user_id = request.user.pk
         answer.vote_down(user_id)
-
-    return HttpResponse(answer.votes)  # total votes
-
-
-@require_POST
-def answer_vote_up(request, answer_id):
-    return answer_vote(request, answer_id, to_up=True)
+        return HttpResponse(answer.votes)
 
 
-@require_POST
-def answer_vote_down(request, answer_id):
-    return answer_vote(request, answer_id, to_up=False)
+class SetCorrectAnswerView(LoginRequiredMixin, View):
 
-
-def question_vote(request, question_id, to_up):
-    if not request.user.is_authenticated:
-        return HttpResponseBadRequest()
-    question = Question.objects.filter(pk=question_id).first()
-    if not question:
-        return HttpResponseBadRequest()
-
-    user_id = request.user.pk
-    if to_up:
-        question.vote_up(user_id)
-    else:
-        question.vote_down(user_id)
-
-    # Возвращаем общее кол-во голосов
-    return HttpResponse(question.votes)
-
-
-@require_POST
-def question_vote_up(request, question_id):
-    return question_vote(request, question_id, True)
-
-
-@require_POST
-def question_vote_down(request, question_id):
-    return question_vote(request, question_id, False)
-
-
-@require_POST
-def set_correct_answer(request, answer_id):
-    if not request.user.is_authenticated:
-        return HttpResponseBadRequest()
-
-    answer = Answer.objects.filter(pk=answer_id).first()
-    if not answer:
-        return HttpResponseBadRequest()
-
-    answer.question.correct_answer = answer
-    answer.question.save()
-    return HttpResponse(answer.question.correct_answer_id)
-
-
-def paginate(entity_list, page, per_page=20):
-    if page is None:
-        page = '1'
-    paginator = Paginator(entity_list, per_page)
-    try:
-        entities = paginator.page(page)
-    except PageNotAnInteger:
-        entities = paginator.page('1')
-    except EmptyPage:
-        entities = paginator.page(paginator.num_pages)
-    return entities
+    def post(self, request, *args, **kwargs):
+        answer_id = kwargs.get('answer_id')
+        answer = get_object_or_404(Answer, pk=answer_id)
+        if answer.question.user.pk == request.user.pk:
+            with transaction.atomic():
+                answer.question.correct_answer = answer
+                answer.question.save()
+            return JsonResponse({'correct_answer_id': answer.pk})
+        else:
+            return HttpResponseBadRequest('Not allowed')
